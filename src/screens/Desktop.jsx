@@ -17,16 +17,21 @@ const Desktop = () => {
   const handleModal = (e) => {
     e.preventDefault();
     setVisible(true);
-    setTop(e.pageY);
-    setLeft(e.pageX);
-    console.log("Working")
+    if(e.pageY > 600 || e.pageX > 1280) {
+      setTop(500);
+      setLeft(1200);
+    }
+    else{
+      setTop(e.pageY)
+      setLeft(e.pageX)
+    }
   }
   const handleClose = () => {
     setVisible(false);
   }
 
   return (
-    <Container className='w-full h-screen' onContextMenu={handleModal} onClick={handleClose}>
+    <Container className='hidden lg:flex w-full h-screen' onContextMenu={handleModal} onClick={handleClose}>
       {
         visible && <More top={top} left={left}/>
       }
