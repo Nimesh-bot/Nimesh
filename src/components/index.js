@@ -1,6 +1,8 @@
 import Browser from '../assets/Icons/Browser.ico'
 import Notepad from '../assets/Icons/notepad.png'
 import FileExplorer from '../assets/Icons/file.png'
+import Disk from '../assets/Icons/disk.png'
+
 import Revenue from '../assets/Screenshots/Revenue.jpg'
 import NewFlix from '../assets/Screenshots/smile.jpg'
 import Trek from '../assets/Screenshots/trek.png'
@@ -9,4 +11,4 @@ import Hotel from '../assets/Screenshots/Hotel.jpg'
 import Profile from '../assets/Screenshots/profileScreen.jpg'
 import HMP from '../assets/Screenshots/HMP.jpg'
 
-export { Browser, Notepad, FileExplorer, Revenue, NewFlix, Trek, Harley, Hotel, Profile, HMP }
+export { Browser, Notepad, FileExplorer, Disk, Revenue, NewFlix, Trek, Harley, Hotel, Profile, HMP }

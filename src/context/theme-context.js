@@ -10,6 +10,7 @@ export const themes = {
         body: '#251D3A',
         text: '#eeeeee',
         background: '#332D44',
+        fade: '#ACACAC',
     },
     heal: {
         primary: '#3ef6a1',

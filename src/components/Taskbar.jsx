@@ -88,11 +88,22 @@ const Taskbar = () => {
         <Icons afterWidth={`${getActive('/browser')}`}>
           <img src={Browser} alt="Web" className='w-8 h-8'/>
         </Icons>
-        <Link to='/explorer'>
-          <Icons afterWidth={`${getActive('/explorer')}`}>
-            <img src={FileExplorer} alt="explorer" className={`w-8 h-8 `}/>
-          </Icons>
-        </Link>
+        {
+          location.pathname !== '/explorer' ? 
+          (
+            <Link to='/explorer'>
+              <Icons afterWidth={`${getActive('/explorer')}`}>
+                <img src={FileExplorer} alt="explorer" className={`w-8 h-8 `}/>
+              </Icons>
+            </Link>
+          )
+          :
+          (
+            <Icons afterWidth={`${getActive('/explorer')}`}>
+              <img src={FileExplorer} alt="explorer" className={`w-8 h-8 `}/>
+            </Icons>
+          )
+        }
         <Icons afterWidth={`${getActive('/notepad')}`}>
           <img src={Notepad} alt="notes" className='w-8 h-8'/>
         </Icons>
