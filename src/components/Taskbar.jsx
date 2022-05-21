@@ -43,7 +43,7 @@ const Taskbar = () => {
   const year = newDate.getFullYear()
 
   return (
-    <Container className='hidden absolute bottom-0 w-full h-12 backdrop-blur-sm backdrop-opacity-10 lg:flex justify-between items-center py-2 px-16'>
+    <Container className='hidden absolute bottom-0 w-screen h-12 backdrop-blur-sm backdrop-opacity-10 lg:flex justify-between items-center py-2 '>
       <div>
       </div>
       <div className='flex gap-x-8'>
@@ -54,9 +54,12 @@ const Taskbar = () => {
         <Link to='/explorer'><img src={FileExplorer} alt="explorer" className='w-8 h-8 hover:scale-110'/></Link>
         <img src={Notepad} alt="notes" className='w-8 h-8 hover:scale-110'/>
       </div>
-      <div className='text-center'>
-        <Time>{currentTime}</Time>
-        <Time>{day}, {year} {month} {date}</Time>
+      <div className='w-max h-full flex justify-end gap-x-8'>
+        <div className='text-center'>
+          <Time>{currentTime}</Time>
+          <Time>{day}, {year} {month} {date}</Time>
+        </div>
+        <div className='w-4 h-full border-l-2 border-l-white' />
       </div>
     </Container>
   )

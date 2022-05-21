@@ -9,7 +9,7 @@ export const themes = {
         secondary: '#cc337a',
         body: '#251D3A',
         text: '#eeeeee',
-        hover: 'rgb(247, 61, 147, 0.2)',
+        background: '#332D44',
     },
     heal: {
         primary: '#3ef6a1',
