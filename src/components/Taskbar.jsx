@@ -4,18 +4,41 @@ import { RiDashboardFill } from 'react-icons/ri'
 import Browser from '../assets/Icons/Browser.ico'
 import Notepad from '../assets/Icons/notepad.png'
 import FileExplorer from '../assets/Icons/file.png'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const Container = styledComponents.div`
   background-color: ${props => props.theme.body};
 `
 const MenuIcon = styledComponents.div`
   color: ${props => props.theme.primary};
+  padding: 0.5rem;
 
   &:hover {
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    transform: scale(1.2);
+    transform: scale(1.1);
+  }
+`
+
+const Icons = styledComponents.div`
+  padding: 0.5rem;
+  position: relative;
+  border-radius: 8px;
+
+  transition: all 0.2s ease-in-out;
+
+  &::after {
+    content: '';
+    width: ${props => props.afterWidth};
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: ${props => props.theme.text};
+    height: 2px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: ${props => props.theme.text}20;
   }
 `
 const Time = styledComponents.p`
@@ -41,26 +64,48 @@ const Taskbar = () => {
   const date = newDate.getDate() 
   const year = newDate.getFullYear()
 
+  let location = useLocation();
+  const getActive = (path) => {
+    if (location.pathname === path) {
+      return '100%'
+    }
+    else{
+      return '0%'
+    }
+  }
+
   return (
-    <Container className='hidden absolute bottom-0 w-screen h-12 backdrop-blur-sm backdrop-opacity-10 lg:flex justify-between items-center py-2 '>
+    <Container className='hidden absolute bottom-0 w-screen h-12 backdrop-blur-sm backdrop-opacity-10 lg:flex justify-between items-center py-2'>
       <div>
       </div>
-      <div className='flex gap-x-8'>
+
+      <div className='flex gap-x-4'>
         <Link to='/'>
           <MenuIcon>
             <RiDashboardFill className={`w-8 h-8`}/>
           </MenuIcon>
         </Link>
-        <img src={Browser} alt="Web" className='w-8 h-8 hover:scale-110'/>
-        <Link to='/explorer'><img src={FileExplorer} alt="explorer" className='w-8 h-8 hover:scale-110'/></Link>
-        <img src={Notepad} alt="notes" className='w-8 h-8 hover:scale-110'/>
+        <Icons afterWidth={`${getActive('/browser')}`}>
+          <img src={Browser} alt="Web" className='w-8 h-8'/>
+        </Icons>
+        <Link to='/explorer'>
+          <Icons afterWidth={`${getActive('/explorer')}`}>
+            <img src={FileExplorer} alt="explorer" className={`w-8 h-8 `}/>
+          </Icons>
+        </Link>
+        <Icons afterWidth={`${getActive('/notepad')}`}>
+          <img src={Notepad} alt="notes" className='w-8 h-8'/>
+        </Icons>
       </div>
+      
       <div className='w-max h-full flex justify-end gap-x-8'>
-        <div className='text-center'>
+        <div className='text-center cursor-context-menu'>
           <Time>{currentTime}</Time>
           <Time>{day}, {year} {month} {date}</Time>
         </div>
-        <div className='w-4 h-full border-l-2 border-l-white' />
+        <Link to='/'>
+          <div className='w-4 h-full border-l-2 border-l-white' />
+        </Link>
       </div>
     </Container>
   )

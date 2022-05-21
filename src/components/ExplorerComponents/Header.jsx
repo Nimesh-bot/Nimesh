@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { IoIosClose } from 'react-icons/io'
+import { useNavigate } from 'react-router-dom'
 import styledComponents from 'styled-components'
 import { FileExplorer } from '../../components'
 import { ThemeContext } from '../../context/theme-context'
@@ -29,6 +30,11 @@ const IconWrapper = styledComponents.div`
 
 const Header = () => {
   const { theme } = useContext(ThemeContext)
+  
+  const navigate = useNavigate()
+  const handleClose = () => {
+    navigate(-1)
+  }
 
   return (
     <div className='w-full flex justify-between'>
@@ -42,7 +48,7 @@ const Header = () => {
             <AiOutlineSearch className='w-4 h-4' color={`${theme.primary}`}/>
         </InputWrapper>
         <IconWrapper className='rounded-md flex justify-center items-center px-1'>
-            <IoIosClose className='w-8 h-8' color={`${theme.text}`}/>
+            <IoIosClose className='w-8 h-8' color={`${theme.text}`} onClick={handleClose}/>
         </IconWrapper>
         </div>
     </div>
