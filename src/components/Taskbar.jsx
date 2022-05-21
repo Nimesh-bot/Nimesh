@@ -16,7 +16,6 @@ const MenuIcon = styledComponents.div`
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     transform: scale(1.2);
-    box-shadow: 0px 3px 6px ${props => props.theme.hover};
   }
 `
 const Time = styledComponents.p`
@@ -47,9 +46,11 @@ const Taskbar = () => {
       <div>
       </div>
       <div className='flex gap-x-8'>
-        <MenuIcon>
-          <RiDashboardFill className={`w-8 h-8`}/>
-        </MenuIcon>
+        <Link to='/'>
+          <MenuIcon>
+            <RiDashboardFill className={`w-8 h-8`}/>
+          </MenuIcon>
+        </Link>
         <img src={Browser} alt="Web" className='w-8 h-8 hover:scale-110'/>
         <Link to='/explorer'><img src={FileExplorer} alt="explorer" className='w-8 h-8 hover:scale-110'/></Link>
         <img src={Notepad} alt="notes" className='w-8 h-8 hover:scale-110'/>
