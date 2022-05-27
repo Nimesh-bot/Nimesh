@@ -3,8 +3,7 @@ import { AiOutlineSearch } from 'react-icons/ai'
 import { IoIosClose } from 'react-icons/io'
 import { useNavigate } from 'react-router-dom'
 import styledComponents from 'styled-components'
-import { FileExplorer } from '../../components'
-import { ThemeContext } from '../../context/theme-context'
+import { ThemeContext } from '../context/theme-context'
 
 const Title = styledComponents.h3`
   color: ${props => props.color}
@@ -28,7 +27,7 @@ const IconWrapper = styledComponents.div`
   }
 `
 
-const Header = () => {
+const Header = ({ icon, title }) => {
   const { theme } = useContext(ThemeContext)
   
   const navigate = useNavigate()
@@ -39,8 +38,8 @@ const Header = () => {
   return (
     <div className='w-full flex justify-between'>
         <div className='flex gap-x-2 items-center'>
-        <img src={FileExplorer} alt="File Explorer" className='w-6 h-6'/>
-        <Title className={`text-base font-normal`} color={`${theme.text}`}>File Explorer</Title>
+        <img src={icon} alt="File Explorer" className='w-6 h-6'/>
+        <Title className={`text-base font-normal`} color={`${theme.text}`}>{title}</Title>
         </div>
         <div className='flex gap-x-8'>
         <InputWrapper className='flex justify-between items-center rounded-md px-4'>

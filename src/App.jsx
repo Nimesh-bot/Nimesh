@@ -5,9 +5,10 @@ import { ThemeContext } from './context/theme-context'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import Construction from './components/Construction'
+import Taskbar from './components/Taskbar'
 import Desktop from './screens/Desktop'
 import Explorer from './screens/Explorer'
-import Taskbar from './components/Taskbar'
+import Professional from './screens/Professional'
 
 const Container = styledComponents.main`
   background-color: ${props => props.theme.body}  
@@ -23,6 +24,7 @@ const App = () => {
           <Routes>
             <Route path='/' exact element={<Desktop />}/>
             <Route path='/explorer' element={<Explorer />}/>
+            <Route path='/explorer/professional' element={<Professional />}/>
           </Routes>
           <Taskbar />
         </Router>

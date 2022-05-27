@@ -11,4 +11,8 @@ import Hotel from '../assets/Screenshots/Hotel.jpg'
 import Profile from '../assets/Screenshots/profileScreen.jpg'
 import HMP from '../assets/Screenshots/HMP.jpg'
 
-export { Browser, Notepad, FileExplorer, Disk, Revenue, NewFlix, Trek, Harley, Hotel, Profile, HMP }
+import Kurma from '../assets/logos/kurmaTech.jpg'
+import Bitmosys from '../assets/logos/bitmosys.png'
+import SoftED from '../assets/logos/softedgroup-logo.png'
+
+export { Browser, Notepad, FileExplorer, Disk, Revenue, NewFlix, Trek, Harley, Hotel, Profile, HMP, Kurma, Bitmosys, SoftED }

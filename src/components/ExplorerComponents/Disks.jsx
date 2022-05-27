@@ -52,7 +52,7 @@ const Disks = () => {
                         <Text>Academy, Hobbies and Interests</Text>
                     </div>
                 </DiskWrapper>        
-                <DiskWrapper className='flex gap-x-4 items-center' onDoubleClick={() => navigate('/explorer')}>
+                <DiskWrapper className='flex gap-x-4 items-center' onDoubleClick={() => navigate('/explorer/professional')}>
                     <img src={Disk} alt="D Drive" className='w-auto h-12'/>
                     <div className='flex flex-col '>
                         <Title>Professional Information (D:)</Title>
