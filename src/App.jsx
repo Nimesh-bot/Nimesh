@@ -18,7 +18,7 @@ const App = () => {
   const { theme } = useContext(ThemeContext)
   return (
     <ThemeProvider theme={theme}>
-      <Container className="w-full h-screen font-poppins relative">
+      <Container className="w-full h-screen font-poppins relative" onContextMenu={(e) => e.preventDefault()}>
         <Construction />
         <Router>
           <Routes>

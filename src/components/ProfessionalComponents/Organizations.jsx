@@ -26,7 +26,7 @@ const orgData = [
 const Organizations = () => {
   return (
     <div className='flex flex-col gap-y-8'>
-        <Heading title='Quick Access' />
+        <Heading title='Organizations Worked For' />
         <div className="flex gap-x-4">
           {
             orgData.map((item, index) => (

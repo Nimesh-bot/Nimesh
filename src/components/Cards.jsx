@@ -18,8 +18,9 @@ const Overlay = styledComponents.div`
 const Container = styledComponents.div`
     background-color: ${props => props.bg};
     background-image: url(${props => props.bgImg});
-    background-size: cover;
-    background-position: top;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     
     &:hover ${Overlay} {
         opacity: 1;

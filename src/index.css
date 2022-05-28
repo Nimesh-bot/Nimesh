@@ -2,8 +2,33 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
   transition: all 0.3s ease-in-out
+}
+
+/* Custom Scroll */
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+
+@supports (scrollbar-color: red blue) {
+  *{
+      scrollbar-color: transparent transparent;
+      scrollbar-width: thin;
+  }
 }
 
 @tailwind base;

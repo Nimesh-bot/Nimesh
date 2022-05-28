@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import { AiOutlineSearch } from 'react-icons/ai'
 import { IoIosClose } from 'react-icons/io'
 import { useNavigate } from 'react-router-dom'
 import styledComponents from 'styled-components'
@@ -9,11 +8,10 @@ const Title = styledComponents.h3`
   color: ${props => props.color}
 `
 const InputWrapper = styledComponents.div`
-  background-color: ${props => props.theme.background};
+  color: ${props => props.theme.primary};
+  cursor: context-menu;
 
-  input {
-    border: none;
-    outline: none;
+  h5{
     color: ${props => props.theme.text};
   }
 `
@@ -42,10 +40,12 @@ const Header = ({ icon, title }) => {
         <Title className={`text-base font-normal`} color={`${theme.text}`}>{title}</Title>
         </div>
         <div className='flex gap-x-8'>
-        <InputWrapper className='flex justify-between items-center rounded-md px-4'>
-            <input className="py-2 text-xs rounded-md border-none bg-transparent" placeholder='Search here.'/>
-            <AiOutlineSearch className='w-4 h-4' color={`${theme.primary}`}/>
+
+        <InputWrapper className='flex flex-col gap-y-0.5'>
+          <h5 className='text-sm font-medium'>Nimesh Shakya</h5>
+          <p className='text-xs font-light'>UI/UX Designer and Frontend Developer</p>
         </InputWrapper>
+
         <IconWrapper className='rounded-md flex justify-center items-center px-1'>
             <IoIosClose className='w-8 h-8' color={`${theme.text}`} onClick={handleClose}/>
         </IconWrapper>
