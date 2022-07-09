@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { IoIosClose } from 'react-icons/io'
-import { useNavigate } from 'react-router-dom'
 import styledComponents from 'styled-components'
 import { ThemeContext } from '../context/theme-context'
 
@@ -25,16 +24,11 @@ const IconWrapper = styledComponents.div`
   }
 `
 
-const Header = ({ icon, title }) => {
+const Header = ({ icon, title, handleClose }) => {
   const { theme } = useContext(ThemeContext)
-  
-  const navigate = useNavigate()
-  const handleClose = () => {
-    navigate(-1)
-  }
 
   return (
-    <div className='w-full flex justify-between'>
+    <div className='w-full h-12 flex justify-between sticky top-0 left-0'>
         <div className='flex gap-x-2 items-center'>
         <img src={icon} alt="File Explorer" className='w-6 h-6'/>
         <Title className={`text-base font-normal`} color={`${theme.text}`}>{title}</Title>

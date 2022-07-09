@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Container } from '../assets/Global'
 import Disks from '../components/ExplorerComponents/Disks'
 import Header from '../components/Header'
@@ -10,10 +11,12 @@ import { FileExplorer } from '../components'
 const Explorer = () => {
   const { theme } = useContext(ThemeContext)
 
+  const navigate = useNavigate()
+
   return (
-    <Container bg={`${theme.body}`} className='w-full h-full px-16 py-4 flex flex-col gap-y-10'>
-        <Header icon={FileExplorer} title="File Explorer"/>
-        <Container bg={`${theme.background}`} className='w-full min-h-[calc(0.8*100vh)] max-h-auto rounded-md px-6 py-4 flex flex-col gap-y-12'>
+    <Container bg={`${theme.body}`} className='w-full px-16 py-4 flex flex-col gap-y-10'>
+        <Header icon={FileExplorer} title="File Explorer" handleClose={() => navigate(-1)}/>
+        <Container bg={`${theme.background}`} className='w-full h-[calc(100vh-10.5rem)] rounded-md px-6 py-4 flex flex-col gap-y-12'>
           <QuickAccess />
           <Disks />
         </Container>
