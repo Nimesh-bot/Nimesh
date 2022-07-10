@@ -16,6 +16,8 @@ import { StateContext } from './context/state-context'
 
 const Container = styledComponents.main`
   background-color: ${props => props.theme.body}  
+  height: 100vh;
+  overflow: hidden;
 `
 
 const App = () => {
@@ -35,7 +37,7 @@ const App = () => {
             <Route path='/desktop' exact element={<Desktop />}/>
             <Route path='/explorer' element={<Explorer />}/>
             <Route path='/explorer/professional' element={<Professional />}/>
-            <Route path='/viewer' element={<Viewer />}/>
+            <Route path='/viewer/:id' element={<Viewer />}/>
           </Routes>
           <Taskbar />
         </Router>

@@ -1,17 +1,20 @@
-import React, { useState } from 'react'
-import styledComponents from 'styled-components'
+import React, { useState, useContext } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import styled from 'styled-components'
+
 import { RiDashboardFill } from 'react-icons/ri'
+
+import { StateContext } from '../context/state-context'
+
 import Browser from '../assets/Icons/Browser.ico'
 import Notepad from '../assets/Icons/notepad.png'
 import FileExplorer from '../assets/Icons/file.png'
-import { Link, useLocation } from 'react-router-dom'
-import { useContext } from 'react'
-import { StateContext } from '../context/state-context'
 
-const Container = styledComponents.div`
+const Container = styled.div`
   background-color: ${props => props.theme.body};
+  z-index: 99;
 `
-const MenuIcon = styledComponents.div`
+const MenuIcon = styled.div`
   color: ${props => props.theme.primary};
   padding: 0.5rem;
 
@@ -21,7 +24,7 @@ const MenuIcon = styledComponents.div`
   }
 `
 
-const Icons = styledComponents.div`
+const Icons = styled.div`
   padding: 0.5rem;
   position: relative;
   border-radius: 8px;
@@ -43,7 +46,7 @@ const Icons = styledComponents.div`
     background-color: ${props => props.theme.text}20;
   }
 `
-const Time = styledComponents.p`
+const Time = styled.p`
   color: ${props => props.theme.text};
   font-size: 0.75rem;
 `

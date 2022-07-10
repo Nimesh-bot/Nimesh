@@ -20,6 +20,7 @@ import Clonstagram from '../assets/Screenshots/Clonstagram.png'
 import Ayuh from '../assets/Screenshots/Ayuh.jpg'
 import Vyakta from '../assets/Screenshots/Vyakta.jpg'
 import Cosplay from '../assets/Screenshots/Cosplay.png'
+import SunwayShow from '../assets/Screenshots/SunwayShow.png'
 
 import Kurma from '../assets/logos/kurmaTech.jpg'
 import Bitmosys from '../assets/logos/bitmosys.jpg'
@@ -40,5 +41,5 @@ import PS from '../assets/Icons/PS.png'
 export { 
         Browser, Notepad, FileExplorer, Disk, Revenue, NewFlix, Trek, Harley, Hotel, Profile, Ecom,
         HMP, Kurma, Bitmosys, SoftED, Digi, Uk, Lema, LemaAdmin, Omnivita, Clonstagram, Ayuh, Vyakta, Cosplay,
-        ReactIcon, HTML, CSS, JS, TS, Tailwind, Styled, Mongo, Flutter, XD, PS 
+        ReactIcon, HTML, CSS, JS, TS, Tailwind, Styled, Mongo, Flutter, XD, PS, SunwayShow
     }

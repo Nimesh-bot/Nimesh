@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import styled from 'styled-components'
 
+import Draggable from 'react-draggable';
+
 import { IoIosClose } from 'react-icons/io'
-import { useState } from 'react'
-import { useEffect } from 'react'
 import { StateContext } from '../../context/state-context'
 
 const Container = styled.div`
@@ -15,6 +15,7 @@ const Container = styled.div`
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
+    z-index: 90;
 `
 const HeadingBar = styled.div`
     width: 100%;
@@ -46,6 +47,7 @@ const Content = styled.div`
     height: calc(60vh-3rem);
     padding: 2rem;
     background-color: ${props => props.theme.background};
+    border: 0.5px solid ${props => props.theme.black};
     border-radius: 0 0 8px 8px;
     
     textarea {
@@ -66,7 +68,7 @@ const Content = styled.div`
 const Notebook = () => {
     const { setNotePadOpen } = useContext(StateContext);
     const [note, setNote] = useState('');
-    
+
     useEffect(() => {
         setNote(localStorage.getItem('note'));
     }, [setNote]);
@@ -77,20 +79,22 @@ const Notebook = () => {
     }
 
     return (
-        <Container>
-            <HeadingBar>
-                <h1>Notebook</h1>
-                <div>
-                    <IoIosClose className='text-[21px]' onClick={() => setNotePadOpen(false)}/>
-                </div>
-            </HeadingBar>
-            <Content>
-                <textarea 
-                    value={note} 
-                    placeholder='Hello, thank you for opening notebook. Here you can keep your notes and ideas. Write whatever you want to keep note of and it auto saves. Enjoy!' 
-                    onChange={handleNoteUpdate} />
-            </Content>
-        </Container>
+        <Draggable>
+            <Container>
+                <HeadingBar>
+                    <h1>Notebook</h1>
+                    <div>
+                        <IoIosClose className='text-[27px]' onClick={() => setNotePadOpen(false)}/>
+                    </div>
+                </HeadingBar>
+                <Content>
+                    <textarea 
+                        value={note} 
+                        placeholder='Hello, thank you for opening notebook. Here you can keep your notes and ideas. Write whatever you want to keep note of and it auto saves. Enjoy!' 
+                        onChange={handleNoteUpdate} />
+                </Content>
+            </Container>
+        </Draggable>
     )
 }
 
