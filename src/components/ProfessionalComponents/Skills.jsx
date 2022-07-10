@@ -28,7 +28,7 @@ const Skills = () => {
     useEffect(() => {
         getAllSkills(dispatch);
         console.log(skills);
-    }, [dispatch, skills]);
+    });
 
     return (
         <div className='flex flex-col gap-y-8'>
@@ -53,7 +53,7 @@ const Skills = () => {
                             <div className='w-full flex flex-col gap-y-2'>
                                 <Title className='font-regular text-sm'>{item.name}</Title>
                                 <ProgressContainer className='w-full h-4 rounded flex items-center'>
-                                    <ProgressBar percent={item.percent} className='rounded'/>
+                                    <ProgressBar percent={item.percentage} className='rounded'/>
                                 </ProgressContainer>
                             </div>
                         </div>
