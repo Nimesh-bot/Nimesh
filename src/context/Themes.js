@@ -6,8 +6,8 @@ export const themes = {
         text: '#eeeeee',
         background: '#332D44',
         fade: '#ACACAC',
-        black: '#1B2430',
-        white: '#f5f5f5'
+        neutral: '#1B2430',
+        invert: '#f5f5f5'
     },
     heal: {
         primary: '#3ef6a1',
@@ -15,8 +15,8 @@ export const themes = {
         body: '#2C272E',
         text: '#eeeeee',
         fade: '#ACACAC',
-        black: '#1B2430',
-        white: '#f5f5f5'
+        neutral: '#1B2430',
+        invert: '#f5f5f5'
     },
     calm: {
         primary: '#42C2FF',
@@ -24,7 +24,7 @@ export const themes = {
         body: '#EFFFFD',
         text: '#0E185F',
         fade: '#ACACAC',
-        black: '#1B2430',
-        white: '#f5f5f5'
+        invert: '#1B2430',
+        neutral: '#f5f5f5'
     }
 }

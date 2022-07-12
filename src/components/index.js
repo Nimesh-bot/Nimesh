@@ -2,6 +2,7 @@ import Browser from '../assets/Icons/Browser.ico'
 import Notepad from '../assets/Icons/notepad.png'
 import FileExplorer from '../assets/Icons/file.png'
 import Disk from '../assets/Icons/disk.png'
+import SettingsIcon from '../assets/Icons/settings.png'
 
 import Revenue from '../assets/Screenshots/Revenue.jpg'
 import NewFlix from '../assets/Screenshots/smile.jpg'
@@ -38,8 +39,15 @@ import Flutter from '../assets/Icons/flutter.png'
 import XD from '../assets/Icons/XD.png'
 import PS from '../assets/Icons/PS.png'
 
+import GithubIcon from '../assets/Icons/github.png'
+import LinkedinIcon from '../assets/Icons/linkedin.png'
+import DiscordIcon from '../assets/Icons/discord.png'
+import InstagramIcon from '../assets/Icons/instagram.png'
+import DribbbleIcon from '../assets/Icons/dribbble.png'
+
 export { 
-        Browser, Notepad, FileExplorer, Disk, Revenue, NewFlix, Trek, Harley, Hotel, Profile, Ecom,
+        Browser, Notepad, FileExplorer, Disk, SettingsIcon, Revenue, NewFlix, Trek, Harley, Hotel, Profile, Ecom,
         HMP, Kurma, Bitmosys, SoftED, Digi, Uk, Lema, LemaAdmin, Omnivita, Clonstagram, Ayuh, Vyakta, Cosplay,
-        ReactIcon, HTML, CSS, JS, TS, Tailwind, Styled, Mongo, Flutter, XD, PS, SunwayShow
+        ReactIcon, HTML, CSS, JS, TS, Tailwind, Styled, Mongo, Flutter, XD, PS, SunwayShow, GithubIcon, LinkedinIcon, 
+        DiscordIcon, InstagramIcon, DribbbleIcon
     }

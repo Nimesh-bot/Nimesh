@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styledComponents from 'styled-components'
 
 const Modal = styledComponents.div`
@@ -33,7 +34,9 @@ const More = ({ top, left }) => {
         <Items onClick={() => window.location.reload()}>Refresh</Items>
         <Items>Toggle Icons</Items>
         <Items>Hire Me</Items>
-        <Items>Settings</Items>
+        <Link to='/setting'>
+            <Items>Settings</Items>
+        </Link>
     </Modal>
   )
 }

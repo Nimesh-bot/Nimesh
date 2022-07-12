@@ -13,6 +13,8 @@ import Viewer from './screens/Viewer'
 import BoardingScreen from './screens/BoardingScreen'
 import Notebook from './components/NoteBookComponents/Notebook'
 import { StateContext } from './context/state-context'
+import StartBox from './components/StartComponents/StartBox'
+import Settings from './screens/Settings'
 
 const Container = styledComponents.main`
   background-color: ${props => props.theme.body}  
@@ -22,7 +24,7 @@ const Container = styledComponents.main`
 
 const App = () => {
   const { theme } = useContext(ThemeContext)
-  const { notePadOpen } = useContext(StateContext)
+  const { notePadOpen, start } = useContext(StateContext)
 
   return (
     <ThemeProvider theme={theme}>
@@ -38,7 +40,11 @@ const App = () => {
             <Route path='/explorer' element={<Explorer />}/>
             <Route path='/explorer/professional' element={<Professional />}/>
             <Route path='/viewer/:id' element={<Viewer />}/>
+            <Route path='/setting' element={<Settings />}/>
           </Routes>
+          {
+            start ? <StartBox bottom='3rem' width='35%' /> : <StartBox bottom="-38rem" width="5%" />
+          }
           <Taskbar />
         </Router>
       </Container>
