@@ -6,7 +6,7 @@ export const themes = {
         text: '#eeeeee',
         background: '#332D44',
         fade: '#ACACAC',
-        neutral: '#1B2430',
+        neutral: '#0a080f',
         invert: '#f5f5f5'
     },
     heal: {
@@ -14,6 +14,7 @@ export const themes = {
         secondary: '#3ef6a1',
         body: '#2C272E',
         text: '#eeeeee',
+        background: '#554b58',
         fade: '#ACACAC',
         neutral: '#1B2430',
         invert: '#f5f5f5'
@@ -23,6 +24,7 @@ export const themes = {
         secondary: '#85F4FF',
         body: '#EFFFFD',
         text: '#0E185F',
+        background: '#fff',
         fade: '#ACACAC',
         invert: '#1B2430',
         neutral: '#f5f5f5'

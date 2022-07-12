@@ -51,7 +51,7 @@ const Skills = () => {
                         <div className='w-52 flex gap-x-4 items-center' key={index}>
                             <img src={item.icon} className='w-12 h-12' alt={item.name} />
                             <div className='w-full flex flex-col gap-y-2'>
-                                <Title className='font-regular text-sm'>{item.name}</Title>
+                                <Title className='font-regular text-base'>{item.name}</Title>
                                 <ProgressContainer className='w-full h-4 rounded flex items-center'>
                                     <ProgressBar percent={item.percentage} className='rounded'/>
                                 </ProgressContainer>

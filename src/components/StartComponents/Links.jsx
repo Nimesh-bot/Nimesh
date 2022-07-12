@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { GithubIcon, LinkedinIcon, DiscordIcon, InstagramIcon, DribbbleIcon } from '..'
+import { GithubIcon, LinkedinIcon, DiscordIcon, InstagramIcon, DribbbleIcon, SettingsIcon } from '..'
+import { StateContext } from '../../context/state-context'
 
 const SocialIcons = [
     {   
@@ -43,26 +45,39 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
 
     border-right: 1px solid ${props => props.theme.primary};
 `
 
 const Links = () => {
+  const { start } = useContext(StateContext);
+  const navigate = useNavigate();
+
   return (
-    <Container>
+    <>
         {
-            SocialIcons.map((item, index) => (
-                <img 
-                    src={item.icon} 
-                    alt={item.name} 
-                    key={index} 
-                    className="w-8 h-8"
-                    onClick={() => window.open(item.link, '_blank')}
-                />
-            ))
+            start &&
+            <Container>
+                <div className='w-full flex flex-col items-center gap-y-4'>
+                    {
+                        SocialIcons.map((item, index) => (
+                            <img 
+                                src={item.icon} 
+                                alt={item.name} 
+                                key={index} 
+                                className="w-8 h-8"
+                                onClick={() => window.open(item.link, '_blank')}
+                            />
+                        ))
+                    }
+                </div>
+                <div>
+                    <img src={SettingsIcon} alt='Settings' className='w-8 h-8' onClick={() => navigate('/setting')}/>
+                </div>
+            </Container>
         }
-    </Container>
+    </>
   )
 }
 

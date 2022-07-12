@@ -21,7 +21,7 @@ const Construction = () => {
             className='w-56 h-56 mix-blend-overlay'
         />
         <div>
-            <p className='text-sm px-4 text-center font-light'>Currently working on desktop mode</p>
+            <p className='text-base px-4 text-center font-light'>Currently working on desktop mode</p>
             <h6 className='text-xl px-4 text-center font-black'>MOBILE APP COMING SOON</h6>
         </div>
     </Container>

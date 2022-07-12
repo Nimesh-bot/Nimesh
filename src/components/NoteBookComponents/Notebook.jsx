@@ -53,7 +53,7 @@ const Content = styled.div`
     textarea {
         width: 100%;
         min-height: 30vh;
-        max-height: calc(60vh - 4rem);
+        max-height: calc(60vh - 8rem);
         background-color: transparent;
         color: ${props => props.theme.text};
         border: none;

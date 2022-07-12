@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import styledComponents from 'styled-components'
 import { ThemeProvider } from 'styled-components'
 import { ThemeContext } from './context/theme-context'
@@ -15,6 +15,8 @@ import Notebook from './components/NoteBookComponents/Notebook'
 import { StateContext } from './context/state-context'
 import StartBox from './components/StartComponents/StartBox'
 import Settings from './screens/Settings'
+import UniversalStyle from './assets/UniversalStyle'
+import { themes } from './context/Themes'
 
 const Container = styledComponents.main`
   background-color: ${props => props.theme.body}  
@@ -23,11 +25,31 @@ const Container = styledComponents.main`
 `
 
 const App = () => {
-  const { theme } = useContext(ThemeContext)
+  const { theme, setWallpaper, setTheme } = useContext(ThemeContext)
   const { notePadOpen, start } = useContext(StateContext)
+
+  useEffect(() => {
+    if (localStorage.getItem('wallpaper') !== null) {
+      setWallpaper(localStorage.getItem('wallpaper'))
+    }
+  })
+  useEffect(() => {
+    if (localStorage.getItem('theme') !== null) {
+      if(localStorage.getItem('theme') === 'calm') {
+        setTheme(themes.calm)
+      }
+      else if(localStorage.getItem('theme') === 'heal') {
+        setTheme(themes.heal)
+      }
+      else{
+        setTheme(themes.neon)
+      }
+    }
+  })
 
   return (
     <ThemeProvider theme={theme}>
+      <UniversalStyle />
       <Container className="w-full font-poppins relative" onContextMenu={(e) => e.preventDefault()}>
         <Construction />
         {

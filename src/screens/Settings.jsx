@@ -1,23 +1,29 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
+
 import { ThemeContext } from '../context/theme-context'
-
 import { Container } from '../assets/Global'
-import { useNavigate } from 'react-router-dom'
+import HeadBar from '../components/SettingsComponents/HeadBar'
+import Options from '../components/SettingsComponents/Options'
+import Wallpaper from '../components/SettingsComponents/Wallpaper'
+import ThemeChange from '../components/SettingsComponents/ThemeChange'
 
-import { SettingsIcon } from '../components'
-import Header from '../components/Header'
 
 const Settings = () => {
     const { theme } = useContext(ThemeContext)
-    const navigate = useNavigate();
+    const [options, setOptions] = useState(0);
 
     return (
-        <Container bg={`${theme.body}`} className='w-full px-16 py-4 flex flex-col gap-y-8'>
-            <Header icon={SettingsIcon} title="Settings" handleClose={() => navigate(-1)}/>
-        
-            <Container bg={`${theme.background}`} className='w-full h-[calc(100vh-10.5rem)] rounded-md px-6 py-4 flex flex-col gap-y-12 mb-2'>
-
-            </Container>
+        <Container bg={`${theme.background}`} className='w-full flex flex-col gap-y-8'>
+            <HeadBar />
+            {
+                options === 0 ?
+                <Options handleWallpaper={() => setOptions(1)} handleTheme={() => setOptions(2)} />
+                :
+                options === 1 ?
+                <Wallpaper handleClick={() => setOptions(0)} />
+                :
+                <ThemeChange handleClick={() => setOptions(0)} />
+            }
         </Container>
     )
 }

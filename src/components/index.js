@@ -45,9 +45,18 @@ import DiscordIcon from '../assets/Icons/discord.png'
 import InstagramIcon from '../assets/Icons/instagram.png'
 import DribbbleIcon from '../assets/Icons/dribbble.png'
 
+import Me from '../assets/Wallpapers/Me.jpg'
+import AnimeHoodie from '../assets/Wallpapers/anime_hoodie.jpg'
+import Komi from '../assets/Wallpapers/komi.jpg'
+import Snooke from '../assets/Wallpapers/Snooke.jpg'
+import Anime from '../assets/Wallpapers/anime-girl.jpg'
+import Miku from '../assets/Wallpapers/miku.jpg'
+import Nino from '../assets/Wallpapers/nino.jpg'
+import Listen from '../assets/Wallpapers/listen.jpg'
+
 export { 
         Browser, Notepad, FileExplorer, Disk, SettingsIcon, Revenue, NewFlix, Trek, Harley, Hotel, Profile, Ecom,
         HMP, Kurma, Bitmosys, SoftED, Digi, Uk, Lema, LemaAdmin, Omnivita, Clonstagram, Ayuh, Vyakta, Cosplay,
         ReactIcon, HTML, CSS, JS, TS, Tailwind, Styled, Mongo, Flutter, XD, PS, SunwayShow, GithubIcon, LinkedinIcon, 
-        DiscordIcon, InstagramIcon, DribbbleIcon
+        DiscordIcon, InstagramIcon, DribbbleIcon, Me, AnimeHoodie, Komi, Snooke, Anime, Miku, Nino, Listen
     }

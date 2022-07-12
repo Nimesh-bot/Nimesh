@@ -13,6 +13,9 @@ const InputWrapper = styledComponents.div`
   h5{
     color: ${props => props.theme.text};
   }
+  p{
+    color: ${props => props.theme.primary};
+  }
 `
 const IconWrapper = styledComponents.div`
   cursor: pointer;
@@ -36,7 +39,7 @@ const Header = ({ icon, title, handleClose }) => {
         <div className='flex gap-x-8'>
 
         <InputWrapper className='flex flex-col gap-y-0.5'>
-          <h5 className='text-sm font-medium'>Nimesh Shakya</h5>
+          <h5 className='text-base font-medium'>Nimesh Shakya</h5>
           <p className='text-xs font-light'>UI/UX Designer and Frontend Developer</p>
         </InputWrapper>
 

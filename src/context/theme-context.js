@@ -1,14 +1,13 @@
 import { createContext, useState } from "react"
-import AnimeHoodie from '../assets/Wallpapers/anime_hoodie.jpg'
 import { themes } from "./Themes";
+import { AnimeHoodie } from "../components";
 
 export const ThemeContext = createContext();
 
-export const bg_image = AnimeHoodie
-
 const ThemeProvider = ({ children }) => {
     const [theme, setTheme] = useState(themes.neon);
-    const [wallpaper, setWallpaper] = useState(bg_image);
+    
+    const [wallpaper, setWallpaper] = useState(AnimeHoodie);
 
     const [viewerDetails, setViewerDetails] = useState({
         name: '',

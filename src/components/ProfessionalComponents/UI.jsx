@@ -3,9 +3,7 @@ import Cards from '../Cards'
 import Heading from '../Heading'
 
 import { BsCode } from 'react-icons/bs'
-import { MdExpandMore } from 'react-icons/md'
 import { Cosplay, Ecom, Harley, Hotel, NewFlix, Profile, Revenue, Trek } from '../../components'
-import styledComponents from 'styled-components'
 
 const uiData = [
     {
@@ -50,37 +48,13 @@ const uiData = [
     }
 ]
 
-const Text = styledComponents.p`
-    color: ${props => props.theme.text};
-`
 
 const UI = () => {
-  const items = uiData.length;
   const [data, setData] = useState(uiData)
-  const [expand, setExpand] = useState(false)
 
   useEffect(() => {
-    const totalItems = () => {
-        if(items <= 5) {
-            setData(uiData)
-        }
-        else{
-            setData(uiData.slice(0,5))
-        }
-    }
-    totalItems();
-  }, [items])
-
-  const handleExpand = (e) => {
-    e.preventDefault()
-    setExpand(!expand)
-    if(expand){
-        setData(uiData.slice(0,5))
-    }
-    else{
-        setData(uiData)
-    }
-  }
+    setData(uiData)
+  }, [])
 
   return (
     <div className='flex flex-col gap-y-8'>
@@ -93,17 +67,6 @@ const UI = () => {
                 ))
             }
             </div>
-            {
-                items > 5 &&
-                <>
-                    {
-                        !expand ?
-                        <Text className='text-base font-light flex gap-x-2 mx-auto items-center cursor-pointer hover:scale-105' onClick={handleExpand}>Expand <span><MdExpandMore className='w-5 h-5'/></span></Text>
-                        :
-                        <Text className='text-base font-light flex gap-x-2 mx-auto items-center cursor-pointer hover:scale-105' onClick={handleExpand}>Collapse <span><MdExpandMore className='w-5 h-5 rotate-180'/></span></Text>
-                    }
-                </>
-            }
         </div>
     </div>
   )

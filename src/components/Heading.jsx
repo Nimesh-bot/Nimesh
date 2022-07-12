@@ -11,7 +11,7 @@ const Line = styledComponents.div`
 const Heading = ({title}) => {
   return (
     <div className='flex gap-x-4 justify-between items-center'>
-        <Title className='w-fit text-sm font-light'>{title}</Title>
+        <Title className='w-fit text-base font-light'>{title}</Title>
         <Line className='flex-grow h-[1px]'/>
     </div>
   )
