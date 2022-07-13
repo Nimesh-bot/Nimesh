@@ -1,6 +1,8 @@
 import React from 'react'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import styledComponents from 'styled-components'
+import { StateContext } from '../../context/state-context'
 
 const Modal = styledComponents.div`
     background-color: ${props => props.theme.body};
@@ -29,16 +31,18 @@ const Items = styledComponents.p`
 `
 
 const More = ({ top, left }) => {
-  return (
-    <Modal className='absolute flex flex-col gap-y-1 z-10' top={top} left={left}>
-        <Items onClick={() => window.location.reload()}>Refresh</Items>
-        <Items>Toggle Icons</Items>
-        <Items>Hire Me</Items>
-        <Link to='/setting'>
-            <Items>Settings</Items>
-        </Link>
-    </Modal>
-  )
+    const { setHireOpen } = useContext(StateContext);
+
+    return (
+        <Modal className='absolute flex flex-col gap-y-1 z-10' top={top} left={left}>
+            <Items onClick={() => window.location.reload()}>Refresh</Items>
+            <Items>Buy me a Coffee</Items>
+            <Items onClick={() => setHireOpen(true)}>Hire Me</Items>
+            <Link to='/setting'>
+                <Items>Settings</Items>
+            </Link>
+        </Modal>
+    )
 }
 
 export default More

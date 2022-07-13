@@ -17,6 +17,7 @@ import StartBox from './components/StartComponents/StartBox'
 import Settings from './screens/Settings'
 import UniversalStyle from './assets/UniversalStyle'
 import { themes } from './context/Themes'
+import HireForm from './components/HireMeComponents/HireForm'
 
 const Container = styledComponents.main`
   background-color: ${props => props.theme.body}  
@@ -26,7 +27,7 @@ const Container = styledComponents.main`
 
 const App = () => {
   const { theme, setWallpaper, setTheme } = useContext(ThemeContext)
-  const { notePadOpen, start } = useContext(StateContext)
+  const { notePadOpen, start, hireOpen } = useContext(StateContext)
 
   useEffect(() => {
     if (localStorage.getItem('wallpaper') !== null) {
@@ -54,6 +55,9 @@ const App = () => {
         <Construction />
         {
           notePadOpen && <Notebook />
+        }
+        {
+          hireOpen && <HireForm />
         }
         <Router>
           <Routes>
