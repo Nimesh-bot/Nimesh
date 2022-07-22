@@ -18,6 +18,7 @@ import Settings from './screens/Settings'
 import UniversalStyle from './assets/UniversalStyle'
 import { themes } from './context/Themes'
 import HireForm from './components/HireMeComponents/HireForm'
+import PersonalApi from './screens/PersonalApi'
 
 const Container = styledComponents.main`
   background-color: ${props => props.theme.body}  
@@ -67,6 +68,7 @@ const App = () => {
             <Route path='/explorer/professional' element={<Professional />}/>
             <Route path='/viewer/:id' element={<Viewer />}/>
             <Route path='/setting' element={<Settings />}/>
+            <Route path='/explorer/personal' element={<PersonalApi />}/>
           </Routes>
           {
             start ? <StartBox bottom='3rem' width='35%' /> : <StartBox bottom="-38rem" width="5%" />
