@@ -35,9 +35,15 @@ const Frontend = () => {
             <div className="flex gap-4 flex-wrap">
               {
                 isFetching ?
-                <div className='w-52 flex gap-x-4 items-center animate-pulse'>
-                    <div className='w-12 h-16 rounded' style={{backgroundColor: `${theme.body}`}}></div>
-                </div>
+                <>
+                  {
+                    [0, 1, 2, 3].map(index => (
+                      <div className='h-32 aspect-video flex gap-x-4 items-center animate-pulse' key={index}>
+                          <div className='w-full h-full rounded' style={{backgroundColor: `${theme.body}`}}></div>
+                      </div>
+                    ))
+                  }
+                </>
                 :
                 <>
                   {
