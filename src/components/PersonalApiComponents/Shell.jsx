@@ -101,6 +101,28 @@ const Shell = ({ request }) => {
                     softed: 'Frontend Developer and UI/UX Designer',
                 })
             }
+            if (req === 'experience') {
+                setRes({
+                    status: 'success',
+                    organizations: [
+                        {
+                            name: 'Kurma Tech',
+                            position: 'Graphic Designer',
+                            duration: 'August 2021 - October 2021'
+                        },
+                        {
+                            name: 'Bitmosys',
+                            position: 'Frontend Developer',
+                            duration: 'March 2022 - Present'
+                        },
+                        {
+                            name: 'Softed',
+                            position: 'Frontend Developer',
+                            duration: 'April 2022 - Present'
+                        }
+                    ]
+                })
+            }
             if (req === 'strength') {
                 setRes({
                     status: 'success',

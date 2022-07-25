@@ -2,7 +2,7 @@ import axios from "axios";
 const access_token = localStorage.getItem('access_token');
 
 const axiosInstance = axios.create({
-    baseURL: "https://portfolio-zrhh.onrender.com/",
+    baseURL: "https://api-saqyeah-com.onrender.com",
     timeout: 10000,
     headers: {
         'Content-Type': 'application/json',

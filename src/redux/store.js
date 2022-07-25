@@ -14,6 +14,8 @@ import {
 import storage from "redux-persist/lib/storage";
 
 import skillsReducer from './features/skillsSlice';
+import projectReducer from './features/projectSlice';
+import designReducer from './features/designSlice';
 
 const persistConfig = {
     key: "root",
@@ -23,6 +25,8 @@ const persistConfig = {
 
 const rootReducer = combineReducers({ 
     skills: skillsReducer,
+    projects: projectReducer,
+    designs: designReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

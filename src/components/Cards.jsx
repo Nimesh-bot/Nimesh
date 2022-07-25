@@ -14,6 +14,7 @@ const Overlay = styledComponents.div`
     color: ${props => props.theme.neutral};
     opacity: 0;
     padding: 0;
+    border-radius: 0 0 8px 8px;
 `
 const Container = styledComponents.div`
     background-color: ${props => props.bg};

@@ -1,10 +1,12 @@
 import React from 'react'
-import styledComponents from 'styled-components'
+import styled from 'styled-components'
 
-const Title = styledComponents.h3`
-    color: ${props => props.theme.primary}
+const Title = styled.h3`
+  color: ${props => props.theme.primary};
+  font-size: 16px;
+  font-weight: 400;
 `
-const Line = styledComponents.div`
+const Line = styled.div`
     background-color: ${props => props.theme.primary}
 `
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import styled from 'styled-components'
+
 import Cards from '../Cards'
-import Heading from '../Heading'
 
 import { BsCode } from 'react-icons/bs'
 import { Cosplay, Ecom, Harley, Hotel, NewFlix, Profile, Revenue, Trek } from '../../components'
@@ -48,6 +49,11 @@ const uiData = [
     }
 ]
 
+const Title = styled.h3`
+  color: ${props => props.theme.primary};
+  font-size: 16px;
+  font-weight: 400;
+`
 
 const UI = () => {
   const [data, setData] = useState(uiData)
@@ -58,7 +64,7 @@ const UI = () => {
 
   return (
     <div className='flex flex-col gap-y-8'>
-        <Heading title='UI/UX Designs' />
+        <Title>UI/UX Designs</Title>
         <div className='flex flex-col gap-y-4'>
             <div className="flex gap-4 flex-wrap">
             {

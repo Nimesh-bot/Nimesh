@@ -10,9 +10,8 @@ const Container = styled.div`
     width: 35%;
     height: 60vh;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 35%;
+    left: 35%;
     display: flex;
     flex-direction: column;
     z-index: 90;
@@ -26,7 +25,7 @@ const HeadingBar = styled.div`
     align-items: center;
     border-radius: 8px 8px 0 0;
 
-    h1 {
+    h2 {
         padding: 0 2rem;
         color: ${props => props.theme.text};
     }
@@ -47,7 +46,7 @@ const Content = styled.div`
     height: calc(60vh-3rem);
     padding: 2rem;
     background-color: ${props => props.theme.background};
-    border: 0.5px solid ${props => props.theme.black};
+    border: 0.5px solid ${props => props.theme.black}25;
     border-radius: 0 0 8px 8px;
     
     textarea {
@@ -82,7 +81,7 @@ const Notebook = () => {
         <Draggable>
             <Container>
                 <HeadingBar>
-                    <h1>Notebook</h1>
+                    <h2>Notebook</h2>
                     <div>
                         <IoIosClose className='text-[27px]' onClick={() => setNotePadOpen(false)}/>
                     </div>

@@ -1,20 +1,24 @@
 import React, { useContext } from 'react'
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import styledComponents from 'styled-components'
+import styled from 'styled-components'
 
 import { ThemeContext } from '../../context/theme-context'
 import { getAllSkills } from '../../redux/apiCalls'
-import Heading from '../Heading'
 
-const Title = styledComponents.h4`
+const Head = styled.h3`
+  color: ${props => props.theme.primary};
+  font-size: 16px;
+  font-weight: 400;
+`
+const Title = styled.h4`
     color: ${props => props.theme.text};
 `
-const ProgressContainer = styledComponents.div`
+const ProgressContainer = styled.div`
     width: 100%;
     background-color: ${props => props.theme.body};
 `
-const ProgressBar = styledComponents.div`
+const ProgressBar = styled.div`
     width: ${props => props.percent}%;
     height: 80%;
     background-color: ${props => props.theme.primary};
@@ -34,9 +38,9 @@ const Skills = () => {
 
     return (
         <div className='flex flex-col gap-y-8'>
-            <Heading title='Skills' />
+            <Head>Skills</Head>
             
-            <div className="flex gap-x-16 gap-y-8 flex-wrap items-center">
+            <div className="flex gap-x-16 gap-y-8 flex-wrap items-center mb-8">
             {
                 isFetching ?
                 <div className='w-52 flex gap-x-4 items-center animate-pulse'>

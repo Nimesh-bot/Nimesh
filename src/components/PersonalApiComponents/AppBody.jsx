@@ -58,27 +58,31 @@ const AppBody = () => {
                         <span>GET</span> 
                         Who am I
                     </ListItem>
-                    <ListItem onClick={() => setRequest('my_education')} color={getActive('my_education')}>
+                    <ListItem onClick={() => setRequest('my_education')} selected={getActive('my_education')}>
                         <span>GET</span> 
                         My Education
                     </ListItem>
-                    <ListItem onClick={() => setRequest('my_hobbies')} color={getActive('my_hobbies')}>
+                    <ListItem onClick={() => setRequest('my_hobbies')} selected={getActive('my_hobbies')}>
                         <span>GET</span> 
                         My Hobbies
                     </ListItem>
-                    <ListItem onClick={() => setRequest('profession')} color={getActive('profession')}>
+                    <ListItem onClick={() => setRequest('profession')} selected={getActive('profession')}>
                         <span>GET</span> 
                         Current Profession
                     </ListItem>
-                    <ListItem onClick={() => setRequest('strength')} color={getActive('strength')}>
+                    <ListItem onClick={() => setRequest('experience')} selected={getActive('experience')}>
+                        <span>GET</span> 
+                        My Experience
+                    </ListItem>
+                    <ListItem onClick={() => setRequest('strength')} selected={getActive('strength')}>
                         <span>GET</span> 
                         Strengths
                     </ListItem>
-                    <ListItem onClick={() => setRequest('weakness')} color={getActive('weakness')}>
+                    <ListItem onClick={() => setRequest('weakness')} selected={getActive('weakness')}>
                         <span>GET</span> 
                         Weakness
                     </ListItem>
-                    <ListItem onClick={() => setRequest('goal')} color={getActive('goal')}>
+                    <ListItem onClick={() => setRequest('goal')} selected={getActive('goal')}>
                         <span>GET</span> 
                         My Goal
                     </ListItem>

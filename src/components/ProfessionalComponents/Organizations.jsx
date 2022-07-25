@@ -1,9 +1,9 @@
 import React from 'react'
 import Cards from '../Cards'
-import Heading from '../Heading'
 
 import { GoOrganization } from 'react-icons/go'
 import { Kurma, Bitmosys, SoftED } from '../../components'
+import styled from 'styled-components'
 
 const orgData = [
     {
@@ -23,10 +23,16 @@ const orgData = [
     },
 ]
 
+const Title = styled.h3`
+  color: ${props => props.theme.primary};
+  font-size: 16px;
+  font-weight: 400;
+`
+
 const Organizations = () => {
   return (
     <div className='flex flex-col gap-y-8'>
-        <Heading title='Organizations Worked For' />
+        <Title>Organizations Worked For</Title>
         <div className="flex gap-x-4">
           {
             orgData.map((item, index) => (

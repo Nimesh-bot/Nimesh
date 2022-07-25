@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import styled from 'styled-components'
 
 import Draggable from 'react-draggable';
@@ -10,9 +10,8 @@ const Container = styled.div`
     width: 35%;
     height: 60vh;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 20%;
+    left: 30%;
     display: flex;
     flex-direction: column;
     z-index: 90;
@@ -47,7 +46,7 @@ const Content = styled.form`
     height: calc(60vh-3rem);
     padding: 2rem;
     background-color: ${props => props.theme.background};
-    border: 0.5px solid ${props => props.theme.neutral};
+    border: 0.5px solid ${props => props.theme.neutral}25;
     border-radius: 0 0 8px 8px;
 
     div {
@@ -108,6 +107,12 @@ const HireForm = () => {
     // const [subject, setSubject] = useState('');
     // const [message, setMessage] = useState('');
 
+    useEffect(() => {
+        //focus on email input
+        document.getElementById('email').focus();
+
+    })
+
     return (
         <Draggable>
             <Container>
@@ -120,15 +125,15 @@ const HireForm = () => {
                 <Content>
                     <div>
                         <label>Your Email</label>
-                        <input onChange={() => {}} />
+                        <input onChange={() => {}} id='email'/>
                     </div>
                     <div>
                         <label>Subject</label>
-                        <input onChange={() => {}} />
+                        <input onChange={() => {}} id='subject'/>
                     </div>
                     <div>
                         <label>Body</label>
-                        <textarea onChange={() => {}} />
+                        <textarea onChange={() => {}} id='body'/>
                     </div>
                     <button>SEND</button>
                 </Content>
