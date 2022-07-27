@@ -7,7 +7,6 @@ import { IoIosClose } from 'react-icons/io'
 import { StateContext } from '../../context/state-context'
 
 const Container = styled.div`
-    width: 35%;
     height: 60vh;
     position: absolute;
     top: 35%;
@@ -46,7 +45,7 @@ const Content = styled.div`
     height: calc(60vh-3rem);
     padding: 2rem;
     background-color: ${props => props.theme.background};
-    border: 0.5px solid ${props => props.theme.black}25;
+    border: 0.75px solid ${props => props.theme.neutral}50;
     border-radius: 0 0 8px 8px;
     
     textarea {
@@ -79,7 +78,7 @@ const Notebook = () => {
 
     return (
         <Draggable>
-            <Container>
+            <Container className='w-2/3 lg:w-1/3'>
                 <HeadingBar>
                     <h2>Notebook</h2>
                     <div>

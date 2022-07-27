@@ -7,7 +7,6 @@ import { IoIosClose } from 'react-icons/io'
 import { StateContext } from '../../context/state-context'
 
 const Container = styled.div`
-    width: 35%;
     height: 60vh;
     position: absolute;
     top: 20%;
@@ -115,7 +114,7 @@ const HireForm = () => {
 
     return (
         <Draggable>
-            <Container>
+            <Container className='w-2/3 lg:w-1/3'>
                 <HeadingBar>
                     <h3>Hire Me</h3>
                     <div>

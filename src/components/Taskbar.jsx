@@ -88,7 +88,7 @@ const Taskbar = () => {
     <>
       {
         location.pathname !== '/' && 
-        <Container className='hidden sticky left-0 bottom-0 w-full h-12 backdrop-blur-sm backdrop-opacity-10 lg:flex justify-between items-center'>
+        <Container className='hidden sticky left-0 bottom-0 w-full h-12 backdrop-blur-sm backdrop-opacity-10 md:flex justify-between items-center' onClick={() => start && setStart(false)}>
           <div>
           </div>
 
@@ -96,9 +96,11 @@ const Taskbar = () => {
             <MenuIcon onClick={() => setStart(!start)}>
               <RiDashboardFill className={`w-8 h-8`}/>
             </MenuIcon>
-            <Icons afterWidth={`${getActive('/browser')}`}>
-              <img src={Browser} alt="Web" className='w-8 h-8'/>
-            </Icons>
+            <Link to='/browser'>
+              <Icons afterWidth={`${getActive('/browser')}`}>
+                <img src={Browser} alt="Web" className='w-8 h-8'/>
+              </Icons>
+            </Link>
             {
               location.pathname !== '/explorer' ? 
               (

@@ -23,6 +23,18 @@ const HeadingWrapper = styled.div`
 const InputWrapper = styled.div`
     background-color: transparent;
     flex: 2;
+
+    select {
+        background-color: transparent;
+        border: none;
+        color: ${props => props.theme.text};
+        font-size: 14px;
+        font-weight: 300;
+
+        option {
+            color: ${props => props.theme.body};
+        }
+    }
 `
 const Button = styled.div`
     background-color: ${props => props.theme.primary}25;
@@ -52,6 +64,17 @@ const Loading = styled.div`
     backdrop-filter: blur(2px) brightness(110%);
 `
 
+const api_options = [
+    'who_am_i',
+    'my_education',
+    'my_hobbies',
+    'profession',
+    'experience',
+    'strength',
+    'weakness',
+    'goal',
+]
+
 const Shell = ({ request }) => {
     const { theme } = useContext(ThemeContext);
     const [loading, setLoading] = useState(false);
@@ -59,6 +82,8 @@ const Shell = ({ request }) => {
     const [res, setRes] = useState({ 
         message: 'Please make a request',
     })
+
+    const [apiReq, setApiReq] = useState('who_am_i');
 
     const handleSend = (req) => {
         setLoading(true);
@@ -147,15 +172,26 @@ const Shell = ({ request }) => {
     
     
     return (
-        <Container className='w-[calc(100vw-22rem)] h-full'>
+        <Container className='w-full lg:w-[calc(100vw-22rem)] h-full'>
             <HeadingWrapper className='w-full flex items-center gap-x-12'>
                 <div className='px-4'>
                     <h3 className='text-base font-normal cursor-pointer'>GET</h3>
                 </div>
-                <InputWrapper>
+                <InputWrapper className='hidden lg:flex'>
                     <p>https://services.saqyeah.com/api/{request}</p>
                 </InputWrapper>
-                <Button onClick={() => handleSend(request)}>SEND</Button>
+                <InputWrapper className='lg:hidden flex items-center'>
+                    <p>https://services.saqyeah.com/api/</p>
+                    <select onChange={(e) => setApiReq(e.target.value)}>
+                        {
+                            api_options.map((option, index) => (
+                                <option key={index} value={option}>{option}</option>
+                            ))
+                        }
+                    </select>
+                </InputWrapper>
+                <Button onClick={() => handleSend(request)} className='hidden lg:flex'>SEND</Button>
+                <Button onClick={() => handleSend(apiReq)} className='lg:hidden'>SEND</Button>
             </HeadingWrapper>
             <Response>
                 {

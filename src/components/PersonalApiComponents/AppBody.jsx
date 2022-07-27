@@ -51,7 +51,7 @@ const AppBody = () => {
     
     return (
         <Container bg={`${theme.background}`} className='w-full h-[calc(100vh-10.5rem)] rounded-md py-4 flex gap-x-12'>
-            <Requests className='w-72 hidden md:flex flex-col gap-y-8'>
+            <Requests className='w-72 hidden lg:flex flex-col gap-y-8'>
                 <h3 className='text-base font-normal'>API Requests</h3>
                 <List>
                     <ListItem onClick={() => setRequest('who_am_i')} selected={getActive('who_am_i')}>

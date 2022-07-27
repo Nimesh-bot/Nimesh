@@ -58,10 +58,12 @@ import LoaderNeon from '../assets/gifs/loader_neon.gif'
 import LoaderHeal from '../assets/gifs/loader_heal.gif'
 import LoaderCalm from '../assets/gifs/loader_calm.gif'
 
+import GoogleIcon from '../assets/Icons/Google.png'
+
 export { 
         Browser, Notepad, FileExplorer, Disk, SettingsIcon, Revenue, NewFlix, Trek, Harley, Hotel, Profile, Ecom,
         HMP, Kurma, Bitmosys, SoftED, Digi, Uk, Lema, LemaAdmin, Omnivita, Clonstagram, Ayuh, Vyakta, Cosplay,
         ReactIcon, HTML, CSS, JS, TS, Tailwind, Styled, Mongo, Flutter, XD, PS, SunwayShow, GithubIcon, LinkedinIcon, 
         DiscordIcon, InstagramIcon, DribbbleIcon, Me, AnimeHoodie, Komi, Snooke, Anime, Miku, Nino, Listen,
-        LoaderNeon, LoaderHeal, LoaderCalm,
+        LoaderNeon, LoaderHeal, LoaderCalm, GoogleIcon,
     }

@@ -19,6 +19,7 @@ import UniversalStyle from './assets/UniversalStyle'
 import { themes } from './context/Themes'
 import HireForm from './components/HireMeComponents/HireForm'
 import PersonalApi from './screens/PersonalApi'
+import Browser from './screens/Browser'
 
 const Container = styledComponents.main`
   background-color: ${props => props.theme.body}  
@@ -28,7 +29,18 @@ const Container = styledComponents.main`
 
 const App = () => {
   const { theme, setWallpaper, setTheme } = useContext(ThemeContext)
-  const { notePadOpen, start, hireOpen } = useContext(StateContext)
+  const { notePadOpen, start, hireOpen, setStart } = useContext(StateContext)
+
+  useEffect(() => {
+    
+  }, [])
+
+  //set the browser to full screen on load
+  const fullscreen = () => {
+    if (document.fullscreenEnabled) {
+      document.documentElement.requestFullscreen()
+    }
+  }
 
   useEffect(() => {
     if (localStorage.getItem('wallpaper') !== null) {
@@ -52,7 +64,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <UniversalStyle />
-      <Container className="w-full font-poppins relative" onContextMenu={(e) => e.preventDefault()}>
+      <Container className="w-full font-poppins relative" onContextMenu={(e) => e.preventDefault()} onClick={() => start && setStart(false)}>
         <Construction />
         {
           notePadOpen && <Notebook />
@@ -62,16 +74,17 @@ const App = () => {
         }
         <Router>
           <Routes>
-            <Route path='/' exact element={<BoardingScreen />}/>
+            <Route path='/' exact element={<BoardingScreen click={fullscreen}/>}/>
             <Route path='/desktop' exact element={<Desktop />}/>
             <Route path='/explorer' element={<Explorer />}/>
             <Route path='/explorer/professional' element={<Professional />}/>
             <Route path='/viewer/:id' element={<Viewer />}/>
             <Route path='/setting' element={<Settings />}/>
             <Route path='/explorer/personal' element={<PersonalApi />}/>
+            <Route path='/browser' element={<Browser />}/>
           </Routes>
           {
-            start ? <StartBox bottom='3rem' width='35%' /> : <StartBox bottom="-38rem" width="5%" />
+            start ? <StartBox bottom='3rem' width='40rem' /> : <StartBox bottom="-38rem" width="5%" />
           }
           <Taskbar />
         </Router>

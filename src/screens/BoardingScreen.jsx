@@ -15,13 +15,13 @@ const Button = styled.button`
     }
 `
 
-const BoardingScreen = () => {
+const BoardingScreen = ({ click }) => {
     const { theme } = useContext(ThemeContext)
     
     const navigate = useNavigate();
 
     return (
-        <Container bg={`${theme.body}`} className='flex w-full h-screen justify-center items-center'>
+        <Container bg={`${theme.body}`} className='flex w-full h-screen justify-center items-center' onClick={click}>
             <Button onClick={() => navigate('/desktop')}>
                 PROCEED
             </Button>

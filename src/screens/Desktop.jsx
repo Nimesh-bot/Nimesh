@@ -31,7 +31,7 @@ const Desktop = () => {
   }
 
   return (
-    <Container className='hidden lg:flex w-full h-[calc(100vh-3rem)]' onContextMenu={handleModal} onClick={handleClose}>
+    <Container className='hidden md:flex w-full h-[calc(100vh-3rem)]' onContextMenu={handleModal} onClick={handleClose}>
       {
         visible && <More top={top} left={left}/>
       }
