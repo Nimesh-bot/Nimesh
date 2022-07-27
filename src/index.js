@@ -9,6 +9,7 @@ import StateProvider from './context/state-context';
 import { Provider } from 'react-redux';
 import { store, persistor } from './redux/store';
 import { PersistGate } from "redux-persist/integration/react";
+import { ResultContextProvider } from './context/ResultContextProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,9 +17,11 @@ root.render(
     <PersistGate loading="null" persistor={persistor}>
       <ThemeProvider>
         <StateProvider>
-          <React.StrictMode>
-            <App />
-          </React.StrictMode>
+          <ResultContextProvider>
+            <React.StrictMode>
+              <App />
+            </React.StrictMode>
+          </ResultContextProvider>
         </StateProvider>
       </ThemeProvider>
     </PersistGate>

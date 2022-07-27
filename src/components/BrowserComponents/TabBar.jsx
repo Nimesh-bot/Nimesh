@@ -33,7 +33,7 @@ const TabBar = () => {
         <Container className='w-full h-12 flex justify-between sticky top-0 left-0 px-16'>
             <div className='flex gap-x-2 items-center py-4'>
                 <img src={Browser} alt="File Explorer" className='w-6 h-6'/>
-                <Title className={`text-base font-normal`} color={`${theme.text}`}>Yeah</Title>
+                <Title className={`text-base font-normal`} color={`${theme.text}`}>Browser</Title>
             </div>
             <div className='flex gap-x-8'>
 

@@ -1,20 +1,35 @@
 import React from 'react'
-import { useContext } from 'react'
 import styled from 'styled-components'
 import { GoogleIcon } from '..'
-import { Container } from '../../assets/Global'
-import { ThemeContext } from '../../context/theme-context'
+
+import { useResultContext } from '../../context/ResultContextProvider'
+
+const Container = styled.div`
+    width: 100%;
+    height: 4rem;
+    border-bottom: 1px solid ${props => props.theme.body}50;
+    display: flex;
+    align-items: center;
+    padding: 0 4rem;
+    gap: 4rem;
+`
 
 const Logo = styled.h1`
-    font-size: 72px;
-    font-weight: 700;
-
+    font-size: 27px;
+    font-weight: 500;
+    color: ${props => props.theme.primary};
+    letter-spacing: 2px;
+    
     span {
-        margin-right: 0.75rem;
-        color: ${props => props.theme.primary};
+        color: ${props => props.theme.text};
+        font-weight: 300;
+        letter-spacing: 5px;
+        font-size: 12px;
     }
+
 `
-const SearchBox = styled.div`
+const SearchBox = styled.form`
+    flex: 1;
     display: flex;
     align-items: center;
     position: relative;
@@ -27,7 +42,7 @@ const SearchBox = styled.div`
         background-color: ${props => props.theme.body};
         border: none;
         color: ${props => props.theme.text};
-        padding: 1rem; 
+        padding: 0.5rem 1rem; 
 
         &:focus {
             outline: none;
@@ -45,25 +60,29 @@ const ImgWrapper = styled.div`
 `
 
 const Search = () => {
-    const { theme } = useContext(ThemeContext)
+    const { searchTerm, setSearchTerm, setSearch, pathname, setPathname } = useResultContext();
+
+    const handleSearch = (e) => {
+        setPathname('/search');
+        e.preventDefault();
+        if(searchTerm) {
+            if(pathname === '/videos') {
+                setSearch(`/search/q=${searchTerm} videos`);
+            }
+            else {
+                setSearch(`${pathname}/q=${searchTerm}&num=10`);
+            }
+        }
+    }
 
     return (
-        <Container bg={`${theme.background}`} className='w-full h-[calc(100vh-8.5rem)] rounded-md py-4 flex flex-col gap-12 justify-center items-center'>
-            <div className='flex flex-col items-end leading-9'>
-                <Logo>
-                    <span>Y</span>
-                    <span>E</span>
-                    <span>A</span>
-                    <span>H</span>
-                </Logo>
-                <p className='mx-4'>Powered by Google</p>
-            </div>
-
-            <SearchBox className='w-4/5 lg:w-1/3'>
+        <Container>
+            <Logo>Yeah <span>POWERED BY GOOGLE</span></Logo>
+            <SearchBox onSubmit={handleSearch}>
                 <ImgWrapper>
                     <img src={GoogleIcon} alt='Google' className='w-8 h-8'/>
                 </ImgWrapper>
-                <input type='text' placeholder='Search'/>
+                <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
             </SearchBox>
         </Container>
     )
