@@ -1,10 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { GoogleIcon } from '..'
+
+import { GoSearch } from 'react-icons/go'
+import { BiImage } from 'react-icons/bi'
+import { FaRegNewspaper } from 'react-icons/fa'
+import { MdSmartDisplay } from 'react-icons/md'
 
 import { useResultContext } from '../../context/ResultContextProvider'
 
 const Container = styled.div`
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    flex-direction: column;
+`
+const Wrapper = styled.div`
     width: 100%;
     height: 4rem;
     border-bottom: 1px solid ${props => props.theme.body}50;
@@ -58,9 +69,31 @@ const ImgWrapper = styled.div`
     align-items: center;
     justify-content: center;
 `
+const Tabs = styled.div`
+    border-bottom: 1px solid ${props => props.theme.body}50;
+`
+const Navs = styled.div`
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    cursor: pointer;
+
+    color: ${props => props.color === true ? props.theme.primary : props.theme.text};
+`
 
 const Search = () => {
     const { searchTerm, setSearchTerm, setSearch, pathname, setPathname } = useResultContext();
+
+    const [active, setActive] = useState('1');
+
+    const getActive = (id) => {
+        if(active === id) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
 
     const handleSearch = (e) => {
         setPathname('/search');
@@ -77,13 +110,34 @@ const Search = () => {
 
     return (
         <Container>
-            <Logo>Yeah <span>POWERED BY GOOGLE</span></Logo>
-            <SearchBox onSubmit={handleSearch}>
-                <ImgWrapper>
-                    <img src={GoogleIcon} alt='Google' className='w-8 h-8'/>
-                </ImgWrapper>
-                <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
-            </SearchBox>
+            <Wrapper>
+                <Logo>Yeah <span>POWERED BY GOOGLE</span></Logo>
+                <SearchBox onSubmit={handleSearch}>
+                    <ImgWrapper>
+                        <img src={GoogleIcon} alt='Google' className='w-8 h-8'/>
+                    </ImgWrapper>
+                    <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
+                </SearchBox>
+            </Wrapper>
+
+            <Tabs className='h-[2rem] flex items-center gap-x-8 px-16'>
+                <Navs color={getActive('1')} onClick={() => setActive('1')}>
+                    <GoSearch className='text-[16px]' />
+                    All
+                </Navs>
+                <Navs color={getActive('2')} onClick={() => setActive('2')}>
+                    <BiImage className='text-[16px]' />
+                    Images
+                </Navs>
+                <Navs color={getActive('3')} onClick={() => setActive('3')}>
+                    <MdSmartDisplay className='text-[16px]' />
+                    Videos
+                </Navs>
+                <Navs color={getActive('4')} onClick={() => setActive('4')}>
+                    <FaRegNewspaper className='text-[16px]' />
+                    News
+                </Navs>
+            </Tabs>
         </Container>
     )
 }

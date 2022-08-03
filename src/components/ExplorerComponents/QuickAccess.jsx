@@ -29,7 +29,9 @@ const QuickAccess = () => {
         <div className="flex gap-x-4">
           {
             quickData.map((item, index) => (
-              <a href={item.link} target="_blank" rel="noreferrer"><Cards src={item.src} icon={<BsCardImage />} title={item.title} key={index}/></a>
+              <a href={item.link} target="_blank" rel="noreferrer" key={index}>
+                <Cards src={item.src} icon={<BsCardImage />} title={item.title} key={index}/>
+              </a>
             ))
           }
         </div>

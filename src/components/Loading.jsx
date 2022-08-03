@@ -6,7 +6,7 @@ import loadingAnimation from '../assets/lottie/coding.json'
 
 const Container = styled.div`
     width: 100%;
-    height: calc(100vh - 10rem);
+    height: ${props => props.height};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,7 +14,7 @@ const Container = styled.div`
     background-color: ${props => props.theme.background};
 `
 
-const Loading = () => {
+const Loading = ({ height }) => {
     const loadingOptions = {
         loop: true,
         autoplay: true,
@@ -25,7 +25,7 @@ const Loading = () => {
     }
 
     return (
-        <Container>
+        <Container height={height}>
             <Lottie
                 options={loadingOptions}
                 height={200}

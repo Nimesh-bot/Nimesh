@@ -31,8 +31,6 @@ const Skills = () => {
 
     useEffect(() => {
         getAllSkills(dispatch);
-        console.log(skills);
-
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [dispatch]);
 

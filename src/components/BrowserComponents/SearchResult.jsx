@@ -8,7 +8,7 @@ import Loading from '../Loading'
 
 const Ad = styled.div`
     background-color: ${props => props.theme.primary}25;
-    height: calc(100vh-20rem);
+    height: calc(100vh-24rem);
     border-radius: 8px;
     margin-bottom: 4rem;
 `
@@ -23,13 +23,13 @@ const SearchResult = () => {
     }, [search])
 
     if (loading) {
-        return <Loading />
+        return <Loading height='calc(100vh - 10rem)'/>
     }
 
     switch (pathname) {
         case '/search':
             return (
-                <Container bg={`${theme.background}`} className='w-full h-[calc(100vh-12rem)] py-4 flex mt-8 justify-between px-16'>
+                <Container bg={`${theme.background}`} className='w-full h-[calc(100vh-14rem)] py-4 flex mt-8 justify-between px-16'>
                     <div className='flex-1 flex flex-col gap-8'>
                         {
                             results?.results?.map(({ link, title }, index) => (

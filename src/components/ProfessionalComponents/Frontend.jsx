@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useContext } from 'react'
-// import { useNavigate } from 'react-router-dom'
+import React, { useEffect, useContext } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 
@@ -8,6 +7,7 @@ import Cards from '../Cards'
 import { BsCode } from 'react-icons/bs'
 import { getAllProjects } from '../../redux/apiCalls';
 import { ThemeContext } from '../../context/theme-context';
+import { useNavigate } from 'react-router-dom';
 
 const Title = styled.h3`
   color: ${props => props.theme.primary};
@@ -17,16 +17,18 @@ const Title = styled.h3`
 
 const Frontend = () => {
   const { theme } = useContext(ThemeContext);
-  const { projects, isFetching } = useSelector(state => state.projects);
+  const { projects } = useSelector(state => state.projects);
+  const { isFetching } = useSelector(state => state.projects);
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
-    getAllProjects(dispatch);      
-  }, [dispatch]);
+    getAllProjects(dispatch);   
+  }, [dispatch]); 
 
-  const idRef = useRef({
-    id: '',
-  })
+  const navigate = useNavigate();
+  const handleNavigate = (id) => {
+    navigate(`/viewer/project/${id}`);
+  }
 
   return (
     <div className='flex flex-col gap-y-8'>
@@ -47,17 +49,14 @@ const Frontend = () => {
                 :
                 <>
                   {
-                      projects.map((item, index) => (
+                      projects?.map((item, index) => (
                           <Cards 
                               src={item.gallery[0].image} 
                               icon={<BsCode />} 
                               title={item.name} 
                               key={index} 
-                              id={item.id} 
-                              clickEvent={() => {
-                                  idRef.current.id = item.id
-                                  // navigate(`/viewer/${idRef.current.id}`)
-                              }}
+                              id={item._id} 
+                              clickEvent={() => handleNavigate(item._id)}
                           />
                       ))
                   }

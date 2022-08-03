@@ -9,7 +9,6 @@ import Taskbar from './components/Taskbar'
 import Desktop from './screens/Desktop'
 import Explorer from './screens/Explorer'
 import Professional from './screens/Professional'
-import Viewer from './screens/Viewer'
 import BoardingScreen from './screens/BoardingScreen'
 import Notebook from './components/NoteBookComponents/Notebook'
 import { StateContext } from './context/state-context'
@@ -20,6 +19,8 @@ import { themes } from './context/Themes'
 import HireForm from './components/HireMeComponents/HireForm'
 import PersonalApi from './screens/PersonalApi'
 import Browser from './screens/Browser'
+import ProjectViewer from './screens/ProjectViewer'
+import DesignViewer from './screens/DesignViewer'
 
 const Container = styledComponents.main`
   background-color: ${props => props.theme.body}  
@@ -78,7 +79,8 @@ const App = () => {
             <Route path='/desktop' exact element={<Desktop />}/>
             <Route path='/explorer' element={<Explorer />}/>
             <Route path='/explorer/professional' element={<Professional />}/>
-            <Route path='/viewer/:id' element={<Viewer />}/>
+            <Route path='/viewer/project/:id' element={<ProjectViewer />}/>
+            <Route path='/viewer/ui/:id' element={<DesignViewer />}/>
             <Route path='/setting' element={<Settings />}/>
             <Route path='/explorer/personal' element={<PersonalApi />}/>
             <Route path='/browser' element={<Browser />}/>

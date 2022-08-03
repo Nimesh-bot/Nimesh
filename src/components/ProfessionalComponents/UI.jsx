@@ -1,10 +1,11 @@
 import React, { useEffect, useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 
-import Cards from '../Cards'
-
 import { BsCode } from 'react-icons/bs'
-import { useDispatch, useSelector } from 'react-redux'
+
+import Cards from '../Cards'
 import { getAllDesigns } from '../../redux/apiCalls'
 import { ThemeContext } from '../../context/theme-context'
 
@@ -19,6 +20,8 @@ const UI = () => {
   const { designs, isFetching } = useSelector(state => state.designs);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   useEffect(() => {
     getAllDesigns(dispatch);
   }, [dispatch]);
@@ -48,6 +51,7 @@ const UI = () => {
                                     icon={<BsCode />} 
                                     title={item.name} 
                                     key={index}
+                                    clickEvent={() => navigate(`/viewer/ui/${item._id}`)}
                                 />
                             ))
                         }

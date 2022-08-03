@@ -33,8 +33,8 @@ const Header = ({ icon, title, handleClose }) => {
   return (
     <div className='w-full h-12 flex justify-between sticky top-0 left-0'>
         <div className='flex gap-x-2 items-center'>
-        <img src={icon} alt="File Explorer" className='w-6 h-6'/>
-        <Title className={`text-base font-normal`} color={`${theme.text}`}>{title}</Title>
+          <img src={icon} alt="File Explorer" className='w-6 h-6'/>
+          <Title className={`text-base font-normal`} color={`${theme.text}`}>{title}</Title>
         </div>
         <div className='flex gap-x-8'>
 
