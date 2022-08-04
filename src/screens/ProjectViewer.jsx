@@ -44,13 +44,15 @@ const ProjectViewer = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        getSelectedProject(dispatch, id).then(() => {
-            const display_image = project_description?.gallery[0]?.image;
-            console.log(display_image);
-            setSelectedImage(display_image);
-        })
+        getSelectedProject(dispatch, id)
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [dispatch, id, setSelectedImage, getSelectedProject])
+    }, [id])
+
+    useEffect(() => {
+        const display_image = project_description?.gallery[0]?.image;
+
+        setSelectedImage(display_image);
+    }, [project_description])
 
     const navigate = useNavigate();
 
