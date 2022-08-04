@@ -43,8 +43,8 @@ const Header = ({ icon, title, handleClose }) => {
           <p className='text-xs font-light'>UI/UX Designer and Frontend Developer</p>
         </InputWrapper>
 
-        <IconWrapper className='rounded-md flex justify-center items-center px-1'>
-            <IoIosClose className='w-8 h-8' color={`${theme.text}`} onClick={handleClose}/>
+        <IconWrapper className='rounded-md flex justify-center items-center px-1' onClick={handleClose}>
+            <IoIosClose className='w-8 h-8' color={`${theme.text}`}/>
         </IconWrapper>
         </div>
     </div>

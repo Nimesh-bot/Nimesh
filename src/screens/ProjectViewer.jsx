@@ -50,7 +50,7 @@ const ProjectViewer = () => {
             setSelectedImage(display_image);
         })
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [dispatch, id, setSelectedImage])
+    }, [dispatch, id, setSelectedImage, getSelectedProject])
 
     const navigate = useNavigate();
 
@@ -64,7 +64,7 @@ const ProjectViewer = () => {
                 :
                 <Container bg={`${theme.background}`} className='w-full h-[calc(100vh-10.5rem)] max-h-auto rounded-md p-8 flex flex-col lg:flex-row gap-y-12 overflow-scroll'>
                     <div className='w-full lg:w-2/5 flex-col gap-8'>
-                        <img src={selectedImage !== '' ? project_description?.gallery[0]?.image : selectedImage} alt="Main" className="flex-1 aspect-video rounded-md mb-2"/>
+                        <img src={selectedImage} alt="Main" className="flex-1 aspect-video rounded-md mb-2"/>
                         <div className='flex gap-4 flex-wrap'>
                             {
                                 project_description?.gallery?.map((item, index) => (
