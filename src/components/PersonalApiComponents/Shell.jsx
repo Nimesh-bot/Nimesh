@@ -1,7 +1,6 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import { LoaderCalm, LoaderHeal, LoaderNeon } from '..'
-import { ThemeContext } from '../../context/theme-context'
+import Spiner from '../../assets/Icons/Spiner'
 
 const Container = styled.div`
     background-color: ${props => props.theme.body};
@@ -76,7 +75,6 @@ const api_options = [
 ]
 
 const Shell = ({ request }) => {
-    const { theme } = useContext(ThemeContext);
     const [loading, setLoading] = useState(false);
 
     const [res, setRes] = useState({ 
@@ -197,15 +195,7 @@ const Shell = ({ request }) => {
                 {
                     loading &&
                     <Loading>
-                        {
-                            theme.theme === 'neon' ?
-                            <img src={LoaderNeon} alt='loader' className='w-32 h-32'/>
-                            :
-                            theme.theme === 'heal' ?
-                            <img src={LoaderHeal} alt='loader' className='w-32 h-32'/>
-                            :
-                            <img src={LoaderCalm} alt='loader' className='w-32 h-32'/>
-                        }
+                        <Spiner />
                     </Loading>  
                 }
                 <pre>{JSON.stringify(res, null, 4)}</pre>

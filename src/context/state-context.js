@@ -8,8 +8,10 @@ const StateProvider = ({ children }) => {
     const [start, setStart] = useState(false);
     const [selectedProject, setSelectedProject] = useState({});
 
+    const [loadingCount, setLoadingCount] = useState(0);
+
     return (
-        <StateContext.Provider value={{ notePadOpen, setNotePadOpen, start, setStart, hireOpen, setHireOpen, selectedProject, setSelectedProject }}>
+        <StateContext.Provider value={{ notePadOpen, setNotePadOpen, start, setStart, hireOpen, setHireOpen, selectedProject, setSelectedProject, loadingCount, setLoadingCount }}>
             {children}
         </StateContext.Provider>
     )

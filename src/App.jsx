@@ -32,10 +32,6 @@ const App = () => {
   const { theme, setWallpaper, setTheme } = useContext(ThemeContext)
   const { notePadOpen, start, hireOpen, setStart } = useContext(StateContext)
 
-  useEffect(() => {
-    
-  }, [])
-
   //set the browser to full screen on load
   const fullscreen = () => {
     if (document.fullscreenEnabled) {
