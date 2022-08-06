@@ -1,5 +1,6 @@
 import axiosInstance from "../utils/axios.config";
 import { getDesignDescriptionSuccess, getDesignFailure, getDesignStart, getDesignSuccess } from "./features/designSlice";
+import { postContactFailure, postContactStart, postContactSuccess } from "./features/hiremeSlice";
 import { getDescriptionSuccess, getProjectFailure, getProjectStart, getProjectSuccess } from "./features/projectSlice";
 import { getSkillsFailure, getSkillsStart, getSkillsSuccess } from "./features/skillsSlice"
 
@@ -55,5 +56,16 @@ export const getSelectedDesign = async (dispatch, id) => {
     }
     catch(err) {
         dispatch(getDesignFailure());
+    }
+}
+
+export const handleHireMe = async (dispatch, data) => {
+    dispatch(postContactStart());
+    try {
+        await axiosInstance.post('/hireme', data);
+        dispatch(postContactSuccess());
+    }
+    catch(err) {
+        dispatch(postContactFailure());
     }
 }

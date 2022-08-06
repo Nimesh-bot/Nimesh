@@ -1,10 +1,15 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { useSelector, useDispatch } from 'react-redux';
 
+import { Toaster, toast } from 'react-hot-toast';
 import Draggable from 'react-draggable';
+
+import { postContactFailure, postContactStart, postContactSuccess } from '../../redux/features/hiremeSlice';
 
 import { IoIosClose } from 'react-icons/io'
 import { StateContext } from '../../context/state-context'
+import axiosInstance from '../../utils/axios.config';
 
 const Container = styled.div`
     height: 60vh;
@@ -17,7 +22,7 @@ const Container = styled.div`
 `
 const HeadingBar = styled.div`
     width: 100%;
-    height: 3rem;
+    min-height: 3rem;
     background-color: ${props => props.theme.body};
     display: flex;
     justify-content: space-between;
@@ -64,7 +69,7 @@ const Content = styled.form`
             background-color: transparent;
             color: ${props => props.theme.text};
             border: none;
-            font-size: 12px;
+            font-size: 14px;
     
             &:focus {
                 outline: none;
@@ -78,7 +83,7 @@ const Content = styled.form`
             background-color: transparent;
             color: ${props => props.theme.text};
             border: none;
-            font-size: 12px;
+            font-size: 14px;
     
             &:focus {
                 outline: none;
@@ -91,26 +96,101 @@ const Content = styled.form`
         background-color: ${props => props.theme.primary}15;
         padding: 0.5rem 1.5rem;
         border-radius: 4px;
-        
-        &:hover {
-            background-color: ${props => props.theme.primary};
-            color: ${props => props.theme.text};
+
+        &:disabled {
+            cursor: none;
+            background-color: transparent;
+            padding: 0.5rem 0;
         }
     }
-    
 ` 
+const Loader = styled.div`
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  border-top: 3px solid ${props => props.theme.primary};
+  border-left: 3px solid ${props => props.theme.primary};
+  border-right: 3px solid ${props => props.theme.primary}00;
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  animation: spin 0.5s linear infinite;
+`
+
+const Span = styled.span`
+    font-size: 12px;
+    color: ${props => props.error ? '#FF1E00' : props.theme.primary};
+    margin-left: 1rem;
+`
+
 
 const HireForm = () => {
+    const { isFetching } = useSelector(state => state.contact)
+
     const { setHireOpen } = useContext(StateContext)
-    // const [email, setEmail] = useState('');
-    // const [subject, setSubject] = useState('');
-    // const [message, setMessage] = useState('');
+    const [email, setEmail] = useState('');
+    const [subject, setSubject] = useState('');
+    const [text, setText] = useState('');
+
+    const [validationError, setValidationError] = useState({
+        email: false,
+        subject: false,
+        text: false,
+        validEmail: false,
+    });
 
     useEffect(() => {
         //focus on email input
         document.getElementById('email').focus();
+    }, [])
 
-    })
+    const dispatch = useDispatch();
+
+    const isValidEmail = (emailAddress) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailAddress);
+    }
+
+    const handleMail = async (e) => {
+        e.preventDefault();
+        if (email === '' && subject === '' && text === '') {
+            setValidationError({ validEmail: false, email: true, subject: true, text: true })
+        } 
+        else if (email === '') {
+            setValidationError({ validEmail: false, email: true, subject: false, text: false })
+        }
+        else if (subject === '') {
+            setValidationError({ validEmail: false, email: false, subject: true, text: false })
+        }
+        else if (text === '') {
+            setValidationError({ validEmail: false, email: false, subject: false, text: true })
+        }
+        else if (!isValidEmail(email)) {
+            setValidationError({ validEmail: true, email: false, subject: false, text: false })
+        }
+        else {
+            setValidationError({ validEmail: false, email: false, subject: false, text: false })
+            dispatch(postContactStart());
+            try {
+                await axiosInstance.post('/hireme', { email, subject, text });
+                dispatch(postContactSuccess());
+                setEmail('');
+                setSubject('');
+                setText('');
+                toast.success('Email Sent!', {
+                    style: {
+                        background: `${props => props.theme.body}`,
+                        color: `${props => props.theme.text}`,
+                    },
+                })
+            }
+            catch(err) {
+                dispatch(postContactFailure());
+            }
+        }
+    }
 
     return (
         <Draggable>
@@ -123,19 +203,54 @@ const HireForm = () => {
                 </HeadingBar>
                 <Content>
                     <div>
-                        <label>Your Email</label>
-                        <input onChange={() => {}} id='email'/>
+                        <label>
+                            Your Email 
+                            <Span error={true}>
+                                {
+                                    validationError.email ? '*' : validationError.validEmail ? 'Invalid Email' : ''
+                                }
+                            </Span>
+                        </label>
+                        <input value={email} type='email' onChange={(e) => setEmail(e.target.value)} id='email'/>
                     </div>
                     <div>
-                        <label>Subject</label>
-                        <input onChange={() => {}} id='subject'/>
+                        <label>
+                            Subject
+                            <Span error={true}>
+                                {
+                                    validationError.subject && '*'
+                                }
+                            </Span>
+                        </label>
+                        <input value={subject} type='text' onChange={(e) => setSubject(e.target.value)} id='subject'/>
                     </div>
                     <div>
-                        <label>Body</label>
-                        <textarea onChange={() => {}} id='body'/>
+                        <label>
+                            Body
+                            <Span error={true}>
+                                {
+                                    validationError.text && '*'
+                                }
+                            </Span>
+                        </label>
+                        <textarea value={text} type='text' onChange={(e) => setText(e.target.value)} id='body'/>
                     </div>
-                    <button>SEND</button>
+
+                    <button disabled={isFetching} onClick={handleMail}>
+                        {
+                            isFetching ? 
+                            <Loader />
+                            :
+                            <span>
+                                SEND
+                            </span>
+                        }
+                    </button>
                 </Content>
+                <Toaster
+                    position="top-center"
+                    reverseOrder={true}
+                />
             </Container>
         </Draggable>
     )
