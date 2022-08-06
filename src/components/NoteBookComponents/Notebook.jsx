@@ -81,8 +81,8 @@ const Notebook = () => {
             <Container className='w-2/3 lg:w-1/3'>
                 <HeadingBar>
                     <h2>Notebook</h2>
-                    <div>
-                        <IoIosClose className='text-[27px]' onClick={() => setNotePadOpen(false)}/>
+                    <div onClick={() => setNotePadOpen(false)}>
+                        <IoIosClose className='text-[27px]'/>
                     </div>
                 </HeadingBar>
                 <Content>

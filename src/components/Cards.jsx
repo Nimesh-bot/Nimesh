@@ -33,7 +33,7 @@ const Container = styledComponents.div`
 const Cards = ({ icon, title, src, clickEvent}) => {
     const { theme } = useContext(ThemeContext)
     return (
-        <Container bg={`${theme.text}`} bgImg={src} className='relative rounded-md h-32 aspect-video cursor-pointer'>
+        <Container bg={`${theme.text}`} bgImg={src} className='relative rounded h-32 aspect-video cursor-pointer'>
             <Overlay className='flex items-end justify-center' onClick={clickEvent}>
                 <h1 className='flex gap-x-2 items-center text-base font-medium'>{icon} {title}</h1>
             </Overlay>

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Contents from './Contents'
 import Links from './Links'
 
 const Container = styled.div`
@@ -20,12 +21,16 @@ const Container = styled.div`
 
     padding: 2rem 0.5rem;
     display: flex;
+    gap: 2rem;
+
+    transition: all 0.3s ease-in-out;
 `
 
 const StartBox = ({ bottom, width }) => {
   return (
     <Container bottom={bottom} width={width}>
       <Links />
+      <Contents />
     </Container>
   )
 }

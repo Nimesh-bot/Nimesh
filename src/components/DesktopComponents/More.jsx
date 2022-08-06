@@ -36,7 +36,7 @@ const More = ({ top, left }) => {
     return (
         <Modal className='absolute flex flex-col gap-y-1 z-10' top={top} left={left}>
             <Items onClick={() => window.location.reload()}>Refresh</Items>
-            <Items>Buy me a Coffee</Items>
+            <Items onClick={() => window.open('https://www.buymeacoffee.com/saqyeah', '_blank')}>Buy me a Coffee</Items>
             <Items onClick={() => setHireOpen(true)}>Hire Me</Items>
             <Link to='/setting'>
                 <Items>Settings</Items>

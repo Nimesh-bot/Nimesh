@@ -117,8 +117,8 @@ const HireForm = () => {
             <Container className='w-2/3 lg:w-1/3'>
                 <HeadingBar>
                     <h3>Hire Me</h3>
-                    <div>
-                        <IoIosClose className='text-[27px]' onClick={() => setHireOpen(false)}/>
+                    <div onClick={() => setHireOpen(false)}>
+                        <IoIosClose className='text-[27px]'/>
                     </div>
                 </HeadingBar>
                 <Content>
