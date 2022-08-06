@@ -1,13 +1,13 @@
 import { createContext, useState } from "react"
 import { themes } from "./Themes";
-import { AnimeHoodie } from "../components";
+import { Snooke } from "../components";
 
 export const ThemeContext = createContext();
 
 const ThemeProvider = ({ children }) => {
-    const [theme, setTheme] = useState(themes.neon);
+    const [theme, setTheme] = useState(themes.heal);
     
-    const [wallpaper, setWallpaper] = useState(AnimeHoodie);
+    const [wallpaper, setWallpaper] = useState(Snooke);
 
     const [viewerDetails, setViewerDetails] = useState({
         name: '',
