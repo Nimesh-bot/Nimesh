@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
 import styled from 'styled-components'
 import { GoogleIcon } from '..'
 
-import { GoSearch } from 'react-icons/go'
-import { BiImage } from 'react-icons/bi'
-import { FaRegNewspaper } from 'react-icons/fa'
-import { MdSmartDisplay } from 'react-icons/md'
+// import { GoSearch } from 'react-icons/go'
+// import { BiImage } from 'react-icons/bi'
+// import { FaRegNewspaper } from 'react-icons/fa'
+// import { MdSmartDisplay } from 'react-icons/md'
 
 import { useResultContext } from '../../context/ResultContextProvider'
 
@@ -72,28 +72,28 @@ const ImgWrapper = styled.div`
 const Tabs = styled.div`
     border-bottom: 1px solid ${props => props.theme.body}50;
 `
-const Navs = styled.div`
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    cursor: pointer;
+// const Navs = styled.div`
+//     display: flex;
+//     gap: 0.5rem;
+//     align-items: center;
+//     cursor: pointer;
 
-    color: ${props => props.color === true ? props.theme.primary : props.theme.text};
-`
+//     color: ${props => props.color === true ? props.theme.primary : props.theme.text};
+// `
 
 const Search = () => {
     const { searchTerm, setSearchTerm, setSearch, pathname, setPathname } = useResultContext();
 
-    const [active, setActive] = useState('1');
+    // const [active, setActive] = useState('1');
 
-    const getActive = (id) => {
-        if(active === id) {
-            return true
-        }
-        else {
-            return false
-        }
-    }
+    // const getActive = (id) => {
+    //     if(active === id) {
+    //         return true
+    //     }
+    //     else {
+    //         return false
+    //     }
+    // }
 
     const handleSearch = (e) => {
         setPathname('/search');
@@ -121,7 +121,7 @@ const Search = () => {
             </Wrapper>
 
             <Tabs className='h-[2rem] flex items-center gap-x-8 px-16'>
-                <Navs color={getActive('1')} onClick={() => setActive('1')}>
+                {/* <Navs color={getActive('1')} onClick={() => setActive('1')}>
                     <GoSearch className='text-[16px]' />
                     All
                 </Navs>
@@ -136,7 +136,7 @@ const Search = () => {
                 <Navs color={getActive('4')} onClick={() => setActive('4')}>
                     <FaRegNewspaper className='text-[16px]' />
                     News
-                </Navs>
+                </Navs> */}
             </Tabs>
         </Container>
     )

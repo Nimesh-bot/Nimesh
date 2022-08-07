@@ -66,7 +66,7 @@ const DesignViewer = () => {
                 :
                 <Container bg={`${theme.background}`} className='w-full h-[calc(100vh-10.5rem)] max-h-auto rounded-md p-8 flex flex-col lg:flex-row gap-y-12 overflow-scroll'>
                     <div className='w-full lg:w-2/5 flex-col gap-8'>
-                        <img src={selectedImage !== '' ? design_description?.gallery[0]?.image : selectedImage} alt="Main" className="flex-1 aspect-video rounded-md mb-2"/>
+                        <img src={selectedImage} alt="Main" className="flex-1 aspect-video rounded-md mb-2"/>
                         <div className='flex gap-4 flex-wrap'>
                             {
                                 design_description?.gallery?.map((item, index) => (
