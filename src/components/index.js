@@ -4,29 +4,6 @@ import FileExplorer from '../assets/Icons/file.png'
 import Disk from '../assets/Icons/disk.png'
 import SettingsIcon from '../assets/Icons/settings.png'
 
-import Revenue from '../assets/Screenshots/Revenue.jpg'
-import NewFlix from '../assets/Screenshots/smile.jpg'
-import Ecom from '../assets/Screenshots/Ecom.png'
-import Trek from '../assets/Screenshots/trekkk.jpg'
-import Harley from '../assets/Screenshots/harley.jpg'
-import Hotel from '../assets/Screenshots/Hotel.jpg'
-import Profile from '../assets/Screenshots/profileScreen.jpg'
-import HMP from '../assets/Screenshots/HMP/HMP.jpg'
-import Digi from '../assets/Screenshots/digi.jpg'
-import Uk from '../assets/Screenshots/Uk.jpg'
-import Lema from '../assets/Screenshots/Lema.png'
-import LemaAdmin from '../assets/Screenshots/Lema-Admin.png'
-import Omnivita from '../assets/Screenshots/omnivita.jpg'
-import Clonstagram from '../assets/Screenshots/Clonstagram.png'
-import Ayuh from '../assets/Screenshots/Ayuh.jpg'
-import Vyakta from '../assets/Screenshots/Vyakta.jpg'
-import Cosplay from '../assets/Screenshots/Cosplay.png'
-import SunwayShow from '../assets/Screenshots/SunwayShow.png'
-
-import Kurma from '../assets/logos/kurmaTech.jpg'
-import Bitmosys from '../assets/logos/bitmosys.jpg'
-import SoftED from '../assets/logos/softEd.jpg'
-
 import ReactIcon from '../assets/Icons/react.png'
 import HTML from '../assets/Icons/HTML.png'
 import CSS from '../assets/Icons/CSS3.png'
@@ -47,11 +24,11 @@ import DribbbleIcon from '../assets/Icons/dribbble.png'
 
 import Me from '../assets/Wallpapers/Me.jpg'
 import AnimeHoodie from '../assets/Wallpapers/anime_hoodie.jpg'
-import Komi from '../assets/Wallpapers/komi.jpg'
-import Snooke from '../assets/Wallpapers/Snooke.jpg'
+import BandW from '../assets/Wallpapers/BlackAndWhite.jpg'
+import Snooke from '../assets/Wallpapers/Snooker.jpg'
 import Anime from '../assets/Wallpapers/anime-girl.jpg'
-import Miku from '../assets/Wallpapers/miku.jpg'
-import Nino from '../assets/Wallpapers/nino.jpg'
+import Sky from '../assets/Wallpapers/nightSky.jpg'
+import LightMe from '../assets/Wallpapers/LightMe.jpg'
 import Listen from '../assets/Wallpapers/listen.jpg'
 
 import LoaderNeon from '../assets/gifs/loader_neon.gif'
@@ -61,9 +38,9 @@ import LoaderCalm from '../assets/gifs/loader_calm.gif'
 import GoogleIcon from '../assets/Icons/Google.png'
 
 export { 
-        Browser, Notepad, FileExplorer, Disk, SettingsIcon, Revenue, NewFlix, Trek, Harley, Hotel, Profile, Ecom,
-        HMP, Kurma, Bitmosys, SoftED, Digi, Uk, Lema, LemaAdmin, Omnivita, Clonstagram, Ayuh, Vyakta, Cosplay,
-        ReactIcon, HTML, CSS, JS, TS, Tailwind, Styled, Mongo, Flutter, XD, PS, SunwayShow, GithubIcon, LinkedinIcon, 
-        DiscordIcon, InstagramIcon, DribbbleIcon, Me, AnimeHoodie, Komi, Snooke, Anime, Miku, Nino, Listen,
+        Browser, Notepad, FileExplorer, Disk, SettingsIcon, 
+        ReactIcon, HTML, CSS, JS, TS, Tailwind, Styled, Mongo, Flutter, XD, PS, GithubIcon, LinkedinIcon, 
+        DiscordIcon, InstagramIcon, DribbbleIcon, 
+        Me, AnimeHoodie, BandW, Snooke, Anime, Sky, LightMe, Listen,
         LoaderNeon, LoaderHeal, LoaderCalm, GoogleIcon,
     }

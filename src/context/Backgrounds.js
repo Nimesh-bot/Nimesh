@@ -1,13 +1,13 @@
-import { Anime, AnimeHoodie, Komi, Listen, Miku, Nino, Snooke } from "../components";
+import { Anime, AnimeHoodie, BandW, Listen, Sky, LightMe, Snooke } from "../components";
 
 export const backgrounds = {
     anime_hoodie: AnimeHoodie,
     anime_girl: Anime,
     snooke: Snooke,
-    komi: Komi,
+    BandW: BandW,
     listen: Listen,
-    nino: Nino,
-    miku: Miku, 
+    LightMe: LightMe,
+    Sky: Sky, 
 }
 
 export const backgroundList = [
@@ -28,8 +28,8 @@ export const backgroundList = [
     },
     {
         _id: '04',
-        name: 'komi',
-        src: Komi,
+        name: 'BandW',
+        src: BandW,
     },
     {
         _id: '05',
@@ -38,12 +38,12 @@ export const backgroundList = [
     },
     {
         _id: '06',
-        name: 'nino',
-        src: Nino,
+        name: 'LightMe',
+        src: LightMe,
     },
     {
         _id: '07',
-        name: 'miku',
-        src: Miku,
+        name: 'Sky',
+        src: Sky,
     }
 ]
