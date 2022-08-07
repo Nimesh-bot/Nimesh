@@ -44,11 +44,15 @@ const DesignViewer = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        getSelectedDesign(dispatch, id).then(() => {
-            setSelectedImage(design_description?.gallery[0]?.image);
-        });
+        getSelectedDesign(dispatch, id)
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [dispatch, id])
+    }, [id])
+
+    useEffect(() => {
+        const display_image = design_description?.gallery[0]?.image;
+
+        setSelectedImage(display_image);
+    }, [design_description])
 
     const navigate = useNavigate();
 
