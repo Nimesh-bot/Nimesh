@@ -23,7 +23,7 @@ const SearchResult = () => {
     }, [search])
 
     if (loading) {
-        return <Loading height='calc(100vh - 10rem)'/>
+        return <Loading height='calc(100vh - 12rem)'/>
     }
 
     switch (pathname) {
