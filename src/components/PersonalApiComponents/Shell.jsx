@@ -141,7 +141,12 @@ const Shell = ({ request }) => {
                         {
                             name: 'Softed',
                             position: 'Frontend Developer',
-                            duration: 'April 2022 - Present'
+                            duration: 'April 2022 - July 2022'
+                        },
+                        {
+                            name: 'Sunway College Kathmandu',
+                            position: 'Frontend Developer and UI Designer',
+                            duration: 'August 2022 - Present'
                         }
                     ]
                 })
