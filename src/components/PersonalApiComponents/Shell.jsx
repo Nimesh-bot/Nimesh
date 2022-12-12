@@ -121,7 +121,7 @@ const Shell = ({ request }) => {
                 setRes({
                     status: 'success',
                     bitmosys: 'Frontend Developer and Designer',
-                    softed: 'Frontend Developer and UI/UX Designer',
+                    softwarica: 'Frontend Developer and UI/UX Designer',
                 })
             }
             if (req === 'experience') {
@@ -130,7 +130,7 @@ const Shell = ({ request }) => {
                     organizations: [
                         {
                             name: 'Kurma Tech',
-                            position: 'Graphic Designer',
+                            position: 'UI/UX Designer Intern',
                             duration: 'August 2021 - October 2021'
                         },
                         {
@@ -140,7 +140,7 @@ const Shell = ({ request }) => {
                         },
                         {
                             name: 'Softed',
-                            position: 'Frontend Developer',
+                            position: 'Frontend Developer Intern',
                             duration: 'April 2022 - July 2022'
                         },
                         {
