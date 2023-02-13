@@ -44,7 +44,7 @@ const Disks = () => {
     return (
         <div className='flex flex-col gap-y-8'>
             <Heading title='Partitions' />
-            <div className="flex flex-wrap gap-8 md:gap-16">
+            <div className="hidden lg:flex flex-wrap gap-8 md:gap-16">
                 <DiskWrapper className='flex gap-x-4 items-center' onDoubleClick={() => navigate('/explorer/personal')}>
                     <img src={Disk} alt="C Drive" className='w-auto h-12'/>
                     <div className='flex flex-col'>
@@ -53,6 +53,22 @@ const Disks = () => {
                     </div>
                 </DiskWrapper>        
                 <DiskWrapper className='flex gap-x-4 items-center' onDoubleClick={() => navigate('/explorer/professional')}>
+                    <img src={Disk} alt="D Drive" className='w-auto h-12'/>
+                    <div className='flex flex-col '>
+                        <Title>Professional Information (D:)</Title>
+                        <Text>Works, Contributions, Achievements and Skills</Text>
+                    </div>
+                </DiskWrapper>        
+            </div>
+            <div className="lg:hidden flex flex-wrap gap-8 md:gap-16">
+                <DiskWrapper className='flex gap-x-4 items-center' onClick={() => navigate('/explorer/personal')}>
+                    <img src={Disk} alt="C Drive" className='w-auto h-12'/>
+                    <div className='flex flex-col'>
+                        <Title>Personal Information (C:)</Title>
+                        <Text>Academy, Hobbies and Interests</Text>
+                    </div>
+                </DiskWrapper>        
+                <DiskWrapper className='flex gap-x-4 items-center' onClick={() => navigate('/explorer/professional')}>
                     <img src={Disk} alt="D Drive" className='w-auto h-12'/>
                     <div className='flex flex-col '>
                         <Title>Professional Information (D:)</Title>
