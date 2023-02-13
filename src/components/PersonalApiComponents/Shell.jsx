@@ -120,7 +120,7 @@ const Shell = ({ request }) => {
                 setRes({
                     status: 'success',
                     bitmosys: 'Frontend Developer and Designer',
-                    softwarica: 'Frontend Developer and UI/UX Designer',
+                    sunway: 'Frontend Developer and UI/UX Designer',
                 })
             }
             if (req === 'experience') {
