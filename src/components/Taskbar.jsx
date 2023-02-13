@@ -88,7 +88,7 @@ const Taskbar = () => {
     <>
       {
         location.pathname !== '/' && 
-        <Container className='hidden sticky left-0 bottom-0 w-full h-12 backdrop-blur-sm backdrop-opacity-10 md:flex justify-between items-center' onClick={() => start && setStart(false)}>
+        <Container className='sticky left-0 bottom-0 w-full h-12 backdrop-blur-sm backdrop-opacity-10 md:flex justify-between items-center' onClick={() => start && setStart(false)}>
           <div>
           </div>
 

@@ -16,6 +16,12 @@ const Button = styled.button`
         color: ${props => props.theme.background};
     }
 `
+const Note = styled.p`
+    color: ${props => props.theme.primary};
+    font-size: 1rem;
+    text-align: center;
+    margin: 1rem 0;
+`
 
 const BoardingScreen = ({ click }) => {
     const { theme } = useContext(ThemeContext)
@@ -39,7 +45,10 @@ const BoardingScreen = ({ click }) => {
     }, []);
 
     return (
-        <Container bg={`${theme.body}`} className='flex w-full h-screen justify-center items-center' onClick={click}>
+        <Container bg={`${theme.body}`} className='px-4 flex flex-col w-full h-screen justify-center items-center' onClick={click}>
+            <Note className='md:hidden'>
+                For the best experience, please use a desktop browser.
+            </Note>
             <Button onClick={() => navigate('/desktop')}>
                 PROCEED
             </Button>

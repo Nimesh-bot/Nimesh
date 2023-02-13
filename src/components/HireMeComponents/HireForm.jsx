@@ -194,7 +194,7 @@ const HireForm = () => {
 
     return (
         <Draggable>
-            <Container className='w-2/3 lg:w-1/3'>
+            <Container className='w-11/12 md:w-2/3 lg:w-1/3'>
                 <HeadingBar>
                     <h3>Hire Me</h3>
                     <div onClick={() => setHireOpen(false)}>

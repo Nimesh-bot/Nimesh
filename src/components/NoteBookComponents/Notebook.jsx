@@ -78,7 +78,7 @@ const Notebook = () => {
 
     return (
         <Draggable>
-            <Container className='w-2/3 lg:w-1/3'>
+            <Container className='w-11/12 md:w-2/3 lg:w-1/3'>
                 <HeadingBar>
                     <h2>Notebook</h2>
                     <div onClick={() => setNotePadOpen(false)}>

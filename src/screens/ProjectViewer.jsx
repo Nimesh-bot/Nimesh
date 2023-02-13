@@ -57,7 +57,7 @@ const ProjectViewer = () => {
     const navigate = useNavigate();
 
     return (
-        <Container bg={`${theme.body}`} className='w-full h-full px-16 py-4 flex flex-col gap-y-10'>
+        <Container bg={`${theme.body}`} className='w-full h-full px-4 lg:px-16 py-4 flex flex-col gap-y-10'>
             <Header icon={Disk} title={project_description?.name} handleClose={() => navigate(-1)}/>
 
             {
@@ -67,7 +67,7 @@ const ProjectViewer = () => {
                 <Container bg={`${theme.background}`} className='w-full h-[calc(100vh-10.5rem)] max-h-auto rounded-md p-8 flex flex-col lg:flex-row gap-y-12 overflow-scroll'>
                     <div className='w-full lg:w-2/5 flex-col gap-8'>
                         <img src={selectedImage} alt="Main" className="flex-1 aspect-video rounded-md mb-2"/>
-                        <div className='flex gap-4 flex-wrap'>
+                        <div className='flex gap-4 overflow-auto'>
                             {
                                 project_description?.gallery?.map((item, index) => (
                                     <Gallery 
@@ -82,7 +82,7 @@ const ProjectViewer = () => {
                             }
                         </div>
                     </div>
-                    <div className='flex-1 px-8 flex flex-col gap-y-8'>
+                    <div className='flex-1 lg:px-8 flex flex-col gap-y-8'>
                         <ContentWrapper className='flex flex-col gap-y-2'>
                             <h2 className='text-xl font-semibol'>Description</h2>
                             <p className='text-xs font-light'>{project_description?.description}</p>

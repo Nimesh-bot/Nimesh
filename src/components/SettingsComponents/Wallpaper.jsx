@@ -12,7 +12,7 @@ const Wallpaper = ({ handleClick }) => {
     const { wallpaper, setWallpaper } = useContext(ThemeContext);
 
     return (
-        <Container className='w-full h-[calc(100vh-25.5rem)] rounded-md px-6 py-4 mb-2'>
+        <Container className='w-full h-[calc(100vh-25.5rem)] rounded-md px-6 py-4 mb-2 overflow-auto'>
             <div className='w-full md:w-2/3 mx-auto flex flex-col gap-8'>
                 <p onClick={handleClick} className='cursor-pointer underline'>Back to Settings</p>
                 <div className='flex flex-col'>
@@ -25,13 +25,13 @@ const Wallpaper = ({ handleClick }) => {
                             <>
                                 {
                                     item.src === wallpaper ?
-                                    <img src={item.src} alt='Wallpaper' key={index} className='h-32 aspect-video rounded object-cover mix-blend-luminosity cursor-not-allowed'/>
+                                    <img src={item.src} alt='Wallpaper' key={index} className='h-20 md:h-32 aspect-video rounded object-cover mix-blend-luminosity cursor-not-allowed'/>
                                     :
                                     <img 
                                         src={item.src} 
                                         alt='Wallpaper' 
                                         key={index} 
-                                        className='h-32 aspect-video rounded object-cover' 
+                                        className='h-20 md:h-32 aspect-video rounded object-cover' 
                                         onClick={() => {
                                             setWallpaper(item.src); 
                                             localStorage.setItem('wallpaper', item.src);

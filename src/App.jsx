@@ -4,7 +4,6 @@ import { ThemeProvider } from 'styled-components'
 import { ThemeContext } from './context/theme-context'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-import Construction from './components/Construction'
 import Taskbar from './components/Taskbar'
 import Desktop from './screens/Desktop'
 import Explorer from './screens/Explorer'
@@ -62,7 +61,6 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <UniversalStyle />
       <Container className="w-full font-poppins relative" onContextMenu={(e) => e.preventDefault()} onClick={() => start && setStart(false)}>
-        <Construction />
         {
           notePadOpen && <Notebook />
         }

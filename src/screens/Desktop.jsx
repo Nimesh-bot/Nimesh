@@ -19,6 +19,7 @@ const Desktop = () => {
   const DesktopContainer = styled.section`
     background-image: url(${wallpaper});
     background-size: cover;
+    background-position: center;
   `
 
   const handleModal = (e) => {
@@ -49,14 +50,14 @@ const Desktop = () => {
       return (
         <Container bg={`${theme.body}`} className='flex w-full h-screen flex-col justify-center items-center fixed top-0 right-0 z-[9999] gap-y-4'>
           <Spiner />
-          <h2>Updating the resources. Please wait a moment.</h2>
+          <h2 className='text-center'>Updating the resources. Please wait a moment.</h2>
         </Container>
       )
     }
   }
 
   return (
-    <DesktopContainer className='hidden md:flex w-full h-[calc(100vh-3rem)]' onContextMenu={handleModal} onClick={handleClose}>
+    <DesktopContainer className='flex w-full h-[calc(100vh-3rem)]' onContextMenu={handleModal} onClick={handleClose}>
       {
         visible && <More top={top} left={left}/>
       }

@@ -12,7 +12,6 @@ const Container = styled.div`
 const HeadingWrapper = styled.div`
     border-bottom: 0.5px solid ${props => props.theme.background};
     padding-bottom: 1rem;
-    height: 3.5rem;
 
     h3 {
         flex-[0.5];
@@ -44,7 +43,7 @@ const Button = styled.div`
 `
 const Response = styled.div`
     width: 100%;
-    height: calc(100% - 3.5rem);
+    flex: 1;
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -176,7 +175,7 @@ const Shell = ({ request }) => {
     
     return (
         <Container className='w-full lg:w-[calc(100vw-22rem)] h-full'>
-            <HeadingWrapper className='w-full flex items-center gap-x-12'>
+            <HeadingWrapper className='w-full h-auto md:h-14 flex flex-col md:flex-row items-center gap-y-4 gap-x-12'>
                 <div className='px-4'>
                     <h3 className='text-base font-normal cursor-pointer'>GET</h3>
                 </div>
@@ -203,7 +202,7 @@ const Shell = ({ request }) => {
                         <Spiner />
                     </Loading>  
                 }
-                <pre>{JSON.stringify(res, null, 4)}</pre>
+                <pre className='whitespace-pre-wrap'>{JSON.stringify(res, null, 4)}</pre>
             </Response>
         </Container>
     )

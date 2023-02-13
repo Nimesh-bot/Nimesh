@@ -14,7 +14,7 @@ const Explorer = () => {
   const navigate = useNavigate()
 
   return (
-    <Container bg={`${theme.body}`} className='w-full px-16 py-4 flex flex-col gap-y-10'>
+    <Container bg={`${theme.body}`} className='w-full px-4 lg:px-16 py-4 flex flex-col gap-y-10'>
         <Header icon={FileExplorer} title="File Explorer" handleClose={() => navigate('/desktop')}/>
         <Container bg={`${theme.background}`} className='w-full h-[calc(100vh-10.5rem)] rounded-md px-6 py-4 flex flex-col gap-y-12'>
           <QuickAccess />

@@ -12,7 +12,7 @@ const PersonalApi = () => {
     const navigate = useNavigate();
 
     return (
-        <Container bg={`${theme.background}`} className='w-full px-16 py-4 flex flex-col gap-y-10'>
+        <Container bg={`${theme.background}`} className='w-full px-4 lg:px-16 py-4 flex flex-col gap-y-10'>
             <AppBar icon={FileExplorer} title="API HANDLER" handleClose={() => navigate('/desktop')}/>
             <AppBody />
         </Container>

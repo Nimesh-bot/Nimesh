@@ -44,7 +44,7 @@ const QuickAccess = () => {
   return (
     <div className='flex flex-col gap-y-8'>
         <Heading title='Quick Access' />
-        <div className="flex gap-x-4">
+        <div className="flex flex-wrap gap-4">
           {
             isFetching ?
             <Block className='animate-pulse'/>

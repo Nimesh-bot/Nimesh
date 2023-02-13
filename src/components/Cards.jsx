@@ -15,6 +15,10 @@ const Overlay = styledComponents.div`
     opacity: 0;
     padding: 0;
     border-radius: 0 0 8px 8px;
+
+    @media (max-width: 790px) {
+        opacity: 1;
+    }
 `
 const Container = styledComponents.div`
     background-color: ${props => props.bg};
@@ -33,7 +37,7 @@ const Container = styledComponents.div`
 const Cards = ({ icon, title, src, clickEvent}) => {
     const { theme } = useContext(ThemeContext)
     return (
-        <Container bg={`${theme.text}`} bgImg={src} className='relative rounded h-32 aspect-video cursor-pointer'>
+        <Container bg={`${theme.text}`} bgImg={src} className='relative rounded h-32 w-full md:w-auto md:aspect-video cursor-pointer'>
             <Overlay className='flex items-end justify-center' onClick={clickEvent}>
                 <h1 className='flex gap-x-2 items-center text-base font-medium'>{icon} {title}</h1>
             </Overlay>

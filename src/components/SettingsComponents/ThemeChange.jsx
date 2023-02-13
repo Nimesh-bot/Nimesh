@@ -11,7 +11,7 @@ const Sub = styled.p`
 const ThemeChange = ({ handleClick }) => {
     const { setTheme } = useContext(ThemeContext);
   return (
-    <Container className='w-full h-[calc(100vh-25.5rem)] rounded-md px-6 py-4 mb-2'>
+    <Container className='w-full h-[calc(100vh-25.5rem)] rounded-md px-6 py-4 mb-2 overflow-auto'>
         <div className='w-full md:w-2/3 mx-auto flex flex-col gap-8'>
             <p onClick={handleClick} className='cursor-pointer underline'>Back to Settings</p>
             <div className='flex flex-col'>

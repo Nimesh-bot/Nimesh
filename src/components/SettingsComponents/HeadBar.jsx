@@ -18,7 +18,7 @@ const HeadBar = () => {
     const navigate = useNavigate();
     
     return (
-        <Container className='px-16 py-4 flex flex-col gap-y-4'>
+        <Container className='px-4 lg:px-16 py-4 flex flex-col gap-y-4'>
             <Header icon={SettingsIcon} title="Settings" handleClose={() => navigate(-1)}/>
 
             <div className='flex h-[calc(100%-4rem)] justify-center items-center gap-4'>

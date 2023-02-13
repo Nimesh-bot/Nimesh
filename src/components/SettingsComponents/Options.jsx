@@ -24,7 +24,7 @@ const Wrapper = styled.div`
 const Options = ({ handleWallpaper, handleTheme }) => {
   return (
     <Container className='w-full h-[calc(100vh-25.5rem)] rounded-md px-6 py-4 mb-2'>
-        <div className='w-full md:w-2/3 mx-auto flex gap-8'>
+        <div className='w-full md:w-2/3 mx-auto flex flex-wrap gap-8'>
             <Wrapper className='flex gap-2 w-full md:w-72 items-center px-4 py-2' onClick={handleWallpaper}>
                 <IconWrapper>
                     <BiImage className='text-[45px]'/>

@@ -44,7 +44,7 @@ const Disks = () => {
     return (
         <div className='flex flex-col gap-y-8'>
             <Heading title='Partitions' />
-            <div className="flex gap-x-16">
+            <div className="flex flex-wrap gap-8 md:gap-16">
                 <DiskWrapper className='flex gap-x-4 items-center' onDoubleClick={() => navigate('/explorer/personal')}>
                     <img src={Disk} alt="C Drive" className='w-auto h-12'/>
                     <div className='flex flex-col'>
