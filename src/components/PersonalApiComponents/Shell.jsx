@@ -48,6 +48,7 @@ const Response = styled.div`
     flex-direction: column;
     padding: 1rem;
     position: relative;
+    overflow: auto;
 `
 const Loading = styled.div`
     position: absolute;
@@ -98,8 +99,8 @@ const Shell = ({ request }) => {
                     status: 'success',
                     fullname: 'Nimesh Shakya',
                     email: 'somit409@gmail.com',
-                    profession: 'Frontned Developer',
-                    age: '21',
+                    profession: 'Frontend Developer',
+                    age: new Date().getMonth() > 5 ? new Date().getFullYear() - 2001 : new Date().getFullYear() - 2002,
                 })
             }
             if (req === 'my_education') {
@@ -120,7 +121,6 @@ const Shell = ({ request }) => {
                 setRes({
                     status: 'success',
                     bitmosys: 'Frontend Developer and Designer',
-                    sunway: 'Frontend Developer and UI/UX Designer',
                 })
             }
             if (req === 'experience') {
@@ -130,22 +130,32 @@ const Shell = ({ request }) => {
                         {
                             name: 'Kurma Tech',
                             position: 'UI/UX Designer Intern',
-                            duration: 'August 2021 - October 2021'
+                            duration: 'August 2021 - October 2021',
+                            contributions: 'Assisted in designing UI/UX for the website and mobile app. And also handled the social media of few clients.'
                         },
                         {
                             name: 'Bitmosys',
                             position: 'Frontend Developer',
-                            duration: 'March 2022 - Present'
+                            duration: 'March 2022 - Present',
+                            contributions: "Currently improving UI/UX of the websites and mobile apps."
                         },
                         {
                             name: 'Softed',
                             position: 'Frontend Developer Intern',
-                            duration: 'April 2022 - July 2022'
+                            duration: 'April 2022 - July 2022',
+                            contributions: "Contributed in creating minimalistic static websites for Uk Colleges Nepal (Web has been updated as of 2023)."
                         },
                         {
                             name: 'Sunway College Kathmandu',
                             position: 'Frontend Developer and UI Designer',
-                            duration: 'August 2022 - Present'
+                            duration: 'August 2022 - February 2023',
+                            contributions: "Improved UI/UX of the website and mobile app. Also worked on the frontend of the few websites."
+                        },
+                        {
+                            name: 'Ayata Incorporation',
+                            position: 'Frontend Developer',
+                            duration: 'February 2023 - April 2023',
+                            contributions: "Fixed bugs of ongoing projects and improved the performance of the webapp by working on feature to upload videos asynchronously without freezing the UI."
                         }
                     ]
                 })
@@ -158,8 +168,8 @@ const Shell = ({ request }) => {
             }
             if (req === 'weakness') {
                 setRes({
-                    status: 'error',
-                    message: '404 not found',
+                    status: 'success',
+                    weakness: ['Prone to Sickness', 'Hot Headed', 'May sometimes jump to conclusions'],
                 })
             }
             if (req === 'goal') {
