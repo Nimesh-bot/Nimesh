@@ -182,11 +182,7 @@ const Shell = ({ request }) => {
       if (req === "weakness") {
         setRes({
           status: "success",
-          weakness: [
-            "Prone to Sickness",
-            "Hot Headed",
-            "May sometimes jump to conclusions",
-          ],
+          weakness: ["404 Not Found"],
         });
       }
       if (req === "goal") {
