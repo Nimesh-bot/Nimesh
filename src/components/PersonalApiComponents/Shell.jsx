@@ -123,7 +123,7 @@ const Shell = ({ request }) => {
       if (req === "profession") {
         setRes({
           status: "success",
-          bitmosys: "Frontend Developer and Designer",
+          "csi-solutions": "Software Engineer",
         });
       }
       if (req === "experience") {
@@ -131,9 +131,16 @@ const Shell = ({ request }) => {
           status: "success",
           organizations: [
             {
+              name: "CSI Solutions",
+              position: "Software Engineer",
+              duration: "January 2024 - Present",
+              contributions:
+                "Small contribution on television broadcasting platform named ロコテレ、where I learned flutter's architecture and development for Android TV. Gained hands-on experience on Odoo. Finally CRM with Vue where I learned working with highly reusable components.",
+            },
+            {
               name: "Bitmosys",
               position: "Frontend Developer",
-              duration: "March 2022 - Present",
+              duration: "March 2022 - December 2024",
               contributions:
                 "Currently improving UI/UX of the websites and mobile apps.",
             },
@@ -197,14 +204,14 @@ const Shell = ({ request }) => {
 
   return (
     <Container className="w-full lg:w-[calc(100vw-22rem)] h-full">
-      <HeadingWrapper className="w-full h-auto md:h-14 flex flex-col md:flex-row items-center gap-y-4 gap-x-12">
+      <HeadingWrapper className="flex flex-col items-center w-full h-auto md:h-14 md:flex-row gap-y-4 gap-x-12">
         <div className="px-4">
           <h3 className="text-base font-normal cursor-pointer">GET</h3>
         </div>
         <InputWrapper className="hidden lg:flex">
           <p>https://services.saqyeah.com/api/{request}</p>
         </InputWrapper>
-        <InputWrapper className="lg:hidden flex items-center">
+        <InputWrapper className="flex items-center lg:hidden">
           <p>https://services.saqyeah.com/api/</p>
           <select onChange={(e) => setApiReq(e.target.value)}>
             {api_options.map((option, index) => (
