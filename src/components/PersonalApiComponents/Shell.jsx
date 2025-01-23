@@ -111,19 +111,19 @@ const Shell = ({ request }) => {
           status: "success",
           school: "Next Generation Residential Academy",
           highschool: "Trinity Internation Education",
-          bachelor: "Softwarica College of IT & Ecommerce (Undergraduate)",
+          bachelor: "Softwarica College of IT & Ecommerce",
         });
       }
       if (req === "my_hobbies") {
         setRes({
           status: "success",
-          hobbies: ["Gaming", "Anime", "Coding", "UI Designing"],
+          hobbies: ["Gaming", "Anime", "Traveling"],
         });
       }
       if (req === "profession") {
         setRes({
           status: "success",
-          "csi-solutions": "Software Engineer",
+          "TripletR&D": "Software Engineer",
         });
       }
       if (req === "experience") {
@@ -131,11 +131,18 @@ const Shell = ({ request }) => {
           status: "success",
           organizations: [
             {
+              name: "Triplet R&D",
+              position: "Software Engineer",
+              duration: "September 2024 - Present",
+              contributions:
+                "Contribution on television broadcasting platform's mobile and TV applications.",
+            },
+            {
               name: "CSI Solutions",
               position: "Software Engineer",
-              duration: "January 2024 - Present",
+              duration: "January 2024 - September 2024",
               contributions:
-                "Small contribution on television broadcasting platform named ロコテレ、where I learned flutter's architecture and development for Android TV. Gained hands-on experience on Odoo. Finally CRM with Vue where I learned working with highly reusable components.",
+                "Small contribution on television broadcasting platform、where I learned flutter's architecture and development for Android TV. Gained hands-on experience on Odoo. Finally CRM with Vue where I learned working with highly reusable components.",
             },
             {
               name: "Bitmosys",
@@ -150,20 +157,6 @@ const Shell = ({ request }) => {
               duration: "February 2023 - April 2023",
               contributions:
                 "Fixed bugs of ongoing projects and improved the performance of the webapp by working on feature to upload videos asynchronously without freezing the UI.",
-            },
-            {
-              name: "Sunway College Kathmandu",
-              position: "Frontend Developer and UI Designer",
-              duration: "August 2022 - February 2023",
-              contributions:
-                "Improved UI/UX of the website and mobile app. Also worked on the frontend of the few websites.",
-            },
-            {
-              name: "Softed",
-              position: "Frontend Developer Intern",
-              duration: "April 2022 - July 2022",
-              contributions:
-                "Contributed in creating minimalistic static websites for Uk Colleges Nepal (Web has been updated as of 2023).",
             },
             {
               name: "Kurma Tech",

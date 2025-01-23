@@ -1,51 +1,44 @@
 import {
-  BandW,
-  LightMe,
-  LookingForward,
-  Sky,
-  Snooke,
-  SoftwareDeveloper,
+  Wallpaper1,
+  Wallpaper2,
+  Wallpaper3,
+  Wallpaper4,
+  Wallpaper5,
 } from "../components";
 
 export const backgrounds = {
-  looking_forward: LookingForward,
-  software_developer: SoftwareDeveloper,
-  snooke: Snooke,
-  BandW: BandW,
-  LightMe: LightMe,
-  Sky: Sky,
+  wallpaper1: Wallpaper1,
+  wallpaper2: Wallpaper2,
+  wallpaper3: Wallpaper3,
+  wallpaper4: Wallpaper4,
+  wallpaper5: Wallpaper5,
 };
 
 export const backgroundList = [
   {
     _id: "01",
-    name: "looking_forward",
-    src: LookingForward,
+    name: "wallpaper1",
+    src: Wallpaper1,
   },
   {
     _id: "02",
-    name: "software_developer",
-    src: SoftwareDeveloper,
+    name: "wallpaper2",
+    src: Wallpaper2,
   },
   {
     _id: "03",
-    name: "snooke",
-    src: Snooke,
+    name: "wallpaper3",
+    src: Wallpaper3,
   },
   {
     _id: "04",
-    name: "BandW",
-    src: BandW,
+    name: "wallpaper4",
+    src: Wallpaper4,
   },
 
   {
-    _id: "06",
-    name: "LightMe",
-    src: LightMe,
-  },
-  {
-    _id: "07",
-    name: "Sky",
-    src: Sky,
+    _id: "05",
+    name: "wallpaper5",
+    src: Wallpaper5,
   },
 ];

@@ -22,13 +22,11 @@ import GithubIcon from "../assets/Icons/github.png";
 import InstagramIcon from "../assets/Icons/instagram.png";
 import LinkedinIcon from "../assets/Icons/linkedin.png";
 
-import BandW from "../assets/Wallpapers/BlackAndWhite.jpg";
-import LightMe from "../assets/Wallpapers/LightMe.jpg";
-import Me from "../assets/Wallpapers/Me.jpg";
-import Snooke from "../assets/Wallpapers/Snooker.jpg";
-import LookingForward from "../assets/Wallpapers/lookingForward.webp";
-import Sky from "../assets/Wallpapers/nightSky.jpg";
-import SoftwareDeveloper from "../assets/Wallpapers/software.webp";
+import Wallpaper1 from "../assets/Wallpapers/1.jpg";
+import Wallpaper2 from "../assets/Wallpapers/2.jpg";
+import Wallpaper3 from "../assets/Wallpapers/3.jpg";
+import Wallpaper4 from "../assets/Wallpapers/4.jpg";
+import Wallpaper5 from "../assets/Wallpapers/5.jpg";
 
 import LoaderCalm from "../assets/gifs/loader_calm.gif";
 import LoaderHeal from "../assets/gifs/loader_heal.gif";
@@ -37,7 +35,6 @@ import LoaderNeon from "../assets/gifs/loader_neon.gif";
 import GoogleIcon from "../assets/Icons/Google.png";
 
 export {
-  BandW,
   Browser,
   CSS,
   DiscordIcon,
@@ -50,23 +47,22 @@ export {
   HTML,
   InstagramIcon,
   JS,
-  LightMe,
   LinkedinIcon,
   LoaderCalm,
   LoaderHeal,
   LoaderNeon,
-  LookingForward,
-  Me,
   Mongo,
   Notepad,
   PS,
   ReactIcon,
   SettingsIcon,
-  Sky,
-  Snooke,
-  SoftwareDeveloper,
   Styled,
   TS,
   Tailwind,
   XD,
+  Wallpaper1,
+  Wallpaper2,
+  Wallpaper3,
+  Wallpaper4,
+  Wallpaper5,
 };

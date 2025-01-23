@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import { Me, SettingsIcon } from '..'
+import { Wallpaper1, SettingsIcon } from '..'
 import Header from '../Header'
 
 const Container = styled.div`
@@ -22,7 +22,7 @@ const HeadBar = () => {
             <Header icon={SettingsIcon} title="Settings" handleClose={() => navigate(-1)}/>
 
             <div className='flex h-[calc(100%-4rem)] justify-center items-center gap-4'>
-                <img src={Me} alt="Nimesh Shakya" className='w-32 h-32 rounded-full object-cover'/>
+                <img src={Wallpaper1} alt="Nimesh Shakya" className='w-32 h-32 rounded-full object-cover'/>
                 <div className='flex flex-col gap-y-1'>
                     <h1>Nimesh Shakya</h1>
                     <div className='flex flex-col'>
